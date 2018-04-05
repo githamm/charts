@@ -1,0 +1,30 @@
+[
+  {
+    "title":"Arizona",
+    "subtitle":"1-2",
+    "ranges":[3],
+    "measures":[1],
+    "markers":[19]
+  },
+  {
+    "title":"Los Angeles",
+    "subtitle":"1-11",
+    "ranges":[12],
+    "measures":[1],
+    "markers":[19]
+  },
+  {
+    "title":"San Diego",
+    "subtitle":"7-1",
+    "ranges":[8],
+    "measures":[7],
+    "markers":[19]
+  },
+  {
+    "title":"San Francisco",
+    "subtitle":"3-5",
+    "ranges":[8],
+    "measures":[3],
+    "markers":[19]
+  }
+]

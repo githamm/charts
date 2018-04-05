@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>PERA's rising unfunded liability</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.18/c3.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.18/c3.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js " charset="utf-8 "></script>
+    <style type="text/css">
+    body {
+        background: #fafafa;
+        font-family: Helvetica, sans-serif;
+    }
+
+    .source {
+        font-style: italic;
+        text-align: right;
+        font-size: .9em;
+    }
+
+    text.c3-axix-y-label {
+        font-size: 1em;
+    }
+    </style>
+</head>
+
+<body>
+    <h2>PERA's rising unfunded liability</h2>
+    <p>Since 2000, the Public Employees' Retirement Association and the government agencies that fund it have persistently underfunded the retirement benefits <strong>(black line)</strong> that have been promised to public employees. Chronic underfunding, coupled with volatile market returns and an aging population, have left the 87-year-old pension $32 billion short <strong>(gray bars)</strong> of what it needs to pay future benefits.</p>
+    <div style="height: 400px;" id="pera"></div>
+    <p class="source">Source: <a href="https://www.copera.org/investments/pera-financial-reports" target="_blank">PERA financial reports</a></p>
+    <script>
+    var peraChart = c3.generate({
+        bindto: '#pera',
+        data: {
+            x: 'x',
+            columns: [
+                ['x', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016'],
+                ['Funded ratio', 105.20, 98.60, 88.30, 75.60, 70.60, 73.30, 74.10, 75.10, 69.80, 67.20, 64.70, 59.90, 61.90, 60.40, 62.30, 62.10, 58.10],
+                ['Unfunded liability', -1.5, .4, 4., 9.9, 12.8, 12.5, 12.8, 13., 16.8, 18.4, 21.5, 25, 24.2, 27.1, 25.9, 26.8, 32.2]
+            ],
+            types: {
+                'Funded ratio': 'line',
+                'Unfunded liability': 'bar'
+            },
+            axes: {
+                'Unfunded liability': 'y2'
+            }
+        },
+
+        grid: {
+            x: {
+                show: false
+            },
+            y: {
+                show: true
+            }
+        },
+        legend: {
+            position: 'inset'
+        },
+        axis: {
+            x: {
+                tick: {
+                    rotate: 65
+                }
+            },
+            y: {
+                label: {
+                    text: 'Funded ratio (line)',
+                    position: 'outer-middle',
+                },
+                min: 0,
+                tick: {
+                    format: function(value) { return d3.format('.1%')(value / 100) }
+                }
+            },
+            y2: {
+                show: true,
+                label: {
+                    text: 'Unfunded liability (bar)',
+                    position: 'outer-middle'
+                },
+                min: 0,
+                tick: {
+                    format: function(value) { return d3.format('$1')(value) + ' billion' }
+                }
+            }
+        },
+        color: {
+            pattern: ['#000', '#bbb']
+        }
+    });
+    // barFatalitiesRateColorado.data.colors({
+    //     'Funded ratio': '#000',
+    //     'Unfunded liability': '#ccc'
+    // });
+    </script>
+</body>
+
+</html>
