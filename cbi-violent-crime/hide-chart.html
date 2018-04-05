@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>Colorado Rockcies Pitching | The Denver Post</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js " charset="utf-8 "></script>
+    <style>
+    svg {
+        overflow-x: scroll;
+    }
+    
+    #crime-stats {
+        /*width: 2000px;*/
+        height: 750px;
+    }
+    
+    .c3-ygrid-line line {
+        stroke: gray;
+        width: 3px;
+    }
+    
+    input.load {
+        background-color: rgba(0, 128, 0, .4);
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        border: 2px solid black;
+    }
+    
+    input.unload {
+        background-color: rgba(255, 0, 0, .4);
+    }
+    </style>
+</head>
+
+<body>
+    <!--     <input type="button" class="load" id="assaultLoad" value="Assault" /> -->
+    Isolate: <a id="assaultLoad" value="Assault" href="#">Assaults</a> | <a id="autoTheftLoad" value="Auto theft" href="#">Auto thefts</a> | <a id="burglaryLoad" value="Burglary" href="#">Burglaries</a>
+    <div id="crime-chart"></div>
+    <script>
+    var assaultLoadBtn = document.getElementById('assaultLoad');
+    var autoTheftLoadBtn = document.getElementById('autoTheftLoad');
+    var burglaryLoadBtn = document.getElementById('burglaryLoad');
+    var crimeChart = c3.generate({
+        bindto: '#crime-chart',
+        size: {
+            height: 500
+        },
+        data: {
+            x: 'x',
+            //        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
+            columns: [
+                ['x', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016'],
+                ['Assault', null, 213.5, 217, 218, 206.5, 195.7, 186.5, 190.9, 196.3, 208.2],
+                ['Auto theft', 333.2, 254.3, 239.7, 215.4, 213.7, 230.2, 235.1, 233.2, 292.7, 349.8],
+                ['Burglary', 572.9, 530.9, 504.6, 499.4, 499.6, 494.8, 469.7, 432.4, 428.7, 423.3],
+                ['Homicide', 3.1, 3, 3.3, 2.5, 3, 3.1, 3.3, 2.8, 3.2, 3.4],
+                ['Larceny', 1985.5, 1853.8, 1835.8, 1855.4, 1861.5, 1905.2, 1917.5, 1837.7, 1880.7, 1922],
+                ['Rape', 39.7, 40.4, 41.3, 42, 43.7, 39.6, 55.1, 55.3, 60.2, 63.2],
+                ['Robbery', 69.2, 63.6, 65.1, 60.7, 64.7, 64.5, 59.7, 56.7, 61, 63.3]
+            ]
+        },
+        grid: {
+            x: {
+                show: false
+            },
+            y: {
+                show: true
+                    // lines: [{
+                    //     value: 6,
+                    //     text: '6 innings',
+                    //     axis: 'y'
+                    // }]
+            },
+        },
+        legend: {
+            position: 'bottom'
+        },
+        axis: {
+            x: {
+                type: 'category' // this needed to load string x value
+            },
+            y: {
+                label: {
+                    text: 'Rate per 100K',
+                    position: 'outer-middle'
+                },
+                // min: 0,
+                // max: 9,
+                // padding: {
+                //     top: 5,
+                //     bottom: 0
+                // }
+            },
+        },
+    });
+    // crimeChart.data.colors({
+    //     'Total innings': 'rgba(0,0,0,.1)'
+    // });
+
+    // setTimeout(function() {
+    //     crimeChart.load({
+    //         columns: [
+    //             ['Auto theft', 333.2, 254.3, 239.7, 215.4, 213.7, 230.2, 235.1, 233.2, 292.7, 349.8]
+    //         ],
+    //         unload: ['Assault']
+    //     });
+    // }, 2000);
+    // setTimeout(function() {
+    //     crimeChart.load({
+    //         columns: [
+    //             ['Burglary', 572.9, 530.9, 504.6, 499.4, 499.6, 494.8, 469.7, 432.4, 428.7, 423.3]
+    //         ],
+    //         unload: ['Auto theft'],
+
+    //     });
+    // }, 4000);
+    // setTimeout(function() {
+    //     crimeChart.load({
+    //         columns: [
+    //             ['Homicide', 3.1, 3, 3.3, 2.5, 3, 3.1, 3.3, 2.8, 3.2, 3.4],
+    //         ],
+    //         unload: ['Burglary'],
+
+    //     });
+    // }, 6000);
+    // setTimeout(function() {
+    //     crimeChart.load({
+    //         columns: [
+    //             ['Larceny', 1985.5, 1853.8, 1835.8, 1855.4, 1861.5, 1905.2, 1917.5, 1837.7, 1880.7, 1922],
+    //         ],
+    //         unload: ['Homicide'],
+
+    //     });
+    // }, 8000);
+    // setTimeout(function() {
+    //     crimeChart.load({
+    //         columns: [
+    //             ['Rape', 39.7, 40.4, 41.3, 42, 43.7, 39.6, 55.1, 55.3, 60.2, 63.2],
+    //         ],
+    //         unload: ['Larceny'],
+
+    //     });
+    // }, 10000);
+    // setTimeout(function() {
+    //     crimeChart.load({
+    //         columns: [
+    //             ['Robbery', 69.2, 63.6, 65.1, 60.7, 64.7, 64.5, 59.7, 56.7, 61, 63.3]
+    //         ],
+    //         unload: ['Rape'],
+
+    //     });
+    // }, 12000);
+    // setTimeout(function() {
+    //     crimeChart.load({
+    //         columns: [
+    //             ['Assault', null, 213.5, 217, 218, 206.5, 195.7, 186.5, 190.9, 196.3, 208.2],
+    //             ['Auto theft', 333.2, 254.3, 239.7, 215.4, 213.7, 230.2, 235.1, 233.2, 292.7, 349.8],
+    //         ],
+    //         unload: ['Robbery']
+    //     });
+    // }, 14000);
+    assaultLoadBtn.addEventListener('click', function(event) {
+        crimeChart.unload({
+            ids: ['Auto theft', 'Burglary', 'Homicide', 'Larceny', 'Rape', 'Robbery']
+        });
+    });
+    autoTheftLoadBtn.addEventListener('click', function(event) {
+        crimeChart.unload({
+            ids: ['Assault', 'Burglary', 'Homicide', 'Larceny', 'Rape', 'Robbery']
+        });
+    });
+    burglaryLoadBtn.addEventListener('click', function(event) {
+        crimeChart.unload({
+            ids: ['Assault', 'Auto theft', 'Homicide', 'Larceny', 'Rape', 'Robbery']
+        });
+    });
+    </script>
+</body>

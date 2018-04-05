@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rockies vs MLB</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+    <script src='tabletop.min.js'></script>
+    <script src='sheetsee.js'></script>
+    <style>
+    body {
+        font-family: Verdana, Helvetica, Arial, sans-serif;
+    }
+
+    table {
+        /*width: 100%;*/
+        font-size: .9rem;
+        border-collapse: collapse;
+    }
+
+    tr.border-bottom td {
+        border-bottom: 1pt solid #ddd;
+    }
+
+    th {
+        text-align: left;
+    }
+
+    th.division-header,
+    th.games-header,
+    th.record-header {
+        color: #c64646;
+        text-transform: uppercase;
+        font-size: .7rem;
+    }
+
+    th.division-header,
+    th.games-header,
+    th.record-header {
+        padding: 0px 0px 0px 3px;
+    }
+
+    th.division-header {
+        width: 20px;
+    }
+
+    th.games-header {
+        width: 48px;
+    }
+
+    th.record-header {
+        width: 20px;
+    }
+
+    th.division-stats {
+        padding: 3px 0px 0px 3px;
+    }
+
+    td {
+        padding: 4px;
+    }
+
+    td.team-name {
+        width: 120px;
+    }
+
+    .lost {
+        background-color: #ccc;
+        height: 9px;
+        width: 9px;
+        margin: -4px;
+        border: 1px solid #fff;
+    }
+
+    .won {
+        background-color: purple;
+        height: 9px;
+        width: 9px;
+        margin: -4px;
+        border: 1px solid #fff;
+    }
+
+    td.division {
+        font-weight: bold;
+        border: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="fullTable"></div>
+    </div>
+    <script id="fullTable_template" type="text/html">
+        <table cellpadding="0">
+            <tbody>
+                {{#rows}}
+                <tr class="border-bottom">
+                    <th class="division-header">{{divisionheader}}</th>
+                    <th class="games-header">{{gamesheader}}</th>
+                    <th class="record-header">{{winheader}}</th>
+                    <th class="record-header">{{lossheader}}</th>
+                </tr>
+                <tr>
+                    <th class="division-stats">{{division}}</th>
+                    <th class="division-stats">{{divisiongames}}</th>
+                    <th class="division-stats">{{divisionwins}}</th>
+                    <th class="division-stats">{{divisionlosses}}</th>
+                </tr>
+                <tr class="border-bottom">
+                    <td class="team-name">{{team}}</td>
+                    <td>{{games}}</td>
+                    <td>{{gamewins}}</td>
+                    <td>{{gamelosses}}</td>
+                    <td>
+                        <div class="{{game1}}"></div>
+                    </td>
+                    <td>
+                        <div class="{{game2}}"></div>
+                    </td>
+                    <td>
+                        <div class="{{game3}}"></div>
+                    </td>
+                    <td>
+                        <div class="{{game4}}"></div>
+                    </td>
+                    <td>
+                        <div class="{{game5}}"></div>
+                    </td>
+                    <td>
+                        <div class="{{game6}}"></div>
+                    </td>
+                    <td>
+                        <div class="{{game7}}"></div>
+                    </td>
+                    <td>
+                        <div class="{{game8}}"></div>
+                    </td>
+                    <td>
+                        <div class="{{game9}}"></div>
+                    </td>
+                    <td>
+                        <div class="{{game10}}"></div>
+                    </td>
+                    <td>
+                        <div class="{{game11}}"></div>
+                    </td>
+                    <td>
+                        <div class="{{game12}}"></div>
+                    </td>
+                    <td>
+                        <div class="{{game13}}"></div>
+                    </td>
+                    <td>
+                        <div class="{{game14}}"></div>
+                    </td>
+                    <td>
+                        <div class="{{game15}}"></div>
+                    </td>
+                    <td>
+                        <div class="{{game15}}"></div>
+                    </td>
+                    <td>
+                        <div class="{{game16}}"></div>
+                    </td>
+                    <td>
+                        <div class="{{game17}}"></div>
+                    </td>
+                    <td>
+                        <div class="{{game18}}"></div>
+                    </td>
+                    <td>
+                        <div class="{{game19}}"></div>
+                    </td>
+                </tr>
+                {{/rows}}
+            </tbody>
+        </table>
+    </script>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        var URL = "1S1zt923x7zN5PuehLjEFF290mJVRNjDLwdsOr2P-rT0"
+        Tabletop.init({ key: URL, callback: showInfo, simpleSheet: true })
+    })
+
+    function showInfo(data) {
+        var tableOptions = {
+            "data": data,
+            // "pagination": 10,
+            "tableDiv": "#fullTable",
+            // "filterDiv": "#fullTableFilter"
+        }
+        console.log(data);
+        Sheetsee.makeTable(tableOptions)
+        // Sheetsee.initiateTableFilter(tableOptions)
+    }
+    </script>
+</body>
+
+</html>
