@@ -5,7 +5,7 @@
     <title>Rockies vs MLB</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+    <link rel="shortcut icon" href="http://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
     <script src='tabletop.min.js'></script>
     <script src='sheetsee.js'></script>
     <style>
@@ -45,7 +45,7 @@
         width: 20px;
     }
 
-    th.games-header {
+    th.results-header {
         width: 48px;
     }
 
@@ -54,7 +54,7 @@
     }
 
     th.division-stats {
-        padding: 3px 0px 0px 3px;
+        padding: 3px 0px 0px 4px;
     }
 
     td {
@@ -67,16 +67,16 @@
 
     .lost {
         background-color: #ccc;
-        height: 9px;
-        width: 9px;
+        height: 10px;
+        width: 10px;
         margin: -4px;
         border: 1px solid #fff;
     }
 
     .won {
         background-color: purple;
-        height: 9px;
-        width: 9px;
+        height: 10px;
+        width: 10px;
         margin: -4px;
         border: 1px solid #fff;
     }
@@ -110,68 +110,103 @@
                 </tr>
                 <tr class="border-bottom">
                     <td class="team-name">{{team}}</td>
-                    <td>{{games}}</td>
+                    <td>{{numbergames}}</td>
                     <td>{{gamewins}}</td>
                     <td>{{gamelosses}}</td>
                     <td>
-                        <div class="{{game1}}"></div>
+                        <a href="{{storylink1}}" target="_top">
+                            <div class="{{result1}}" title="{{date1}} &bull; {{score1}}"></div>
+                        </a>
                     </td>
                     <td>
-                        <div class="{{game2}}"></div>
+                        <a href="{{storylink2}}" target="_top">
+                            <div class="{{result2}}" title="{{date2}} &bull; {{score2}}"></div>
+                        </a>
                     </td>
                     <td>
-                        <div class="{{game3}}"></div>
+                        <a href="{{storylink3}}" target="_top">
+                            <div class="{{result3}}" title="{{date3}} &bull; {{score3}}"></div>
+                        </a>
                     </td>
                     <td>
-                        <div class="{{game4}}"></div>
+                        <a href="{{storylink4}}" target="_top">
+                            <div class="{{result4}}" title="{{date4}} &bull; {{score4}}"></div>
+                        </a>
                     </td>
                     <td>
-                        <div class="{{game5}}"></div>
+                        <a href="{{storylink5}}" target="_top">
+                            <div class="{{result5}}" title="{{date5}} &bull; {{score5}}"></div>
+                        </a>
                     </td>
                     <td>
-                        <div class="{{game6}}"></div>
+                        <a href="{{storylink6}}" target="_top">
+                            <div class="{{result6}}" title="{{date6}} &bull; {{score6}}"></div>
+                        </a>
                     </td>
                     <td>
-                        <div class="{{game7}}"></div>
+                        <a href="{{storylink7}}" target="_top">
+                            <div class="{{result7}}" title="{{date7}} &bull; {{score7}}"></div>
+                        </a>
                     </td>
                     <td>
-                        <div class="{{game8}}"></div>
+                        <a href="{{storylink8}}" target="_top">
+                            <div class="{{result8}}" title="{{date8}} &bull; {{score8}}"></div>
+                        </a>
                     </td>
                     <td>
-                        <div class="{{game9}}"></div>
+                        <a href="{{storylink9}}" target="_top">
+                            <div class="{{result9}}" title="{{date9}} &bull; {{score9}}"></div>
+                        </a>
                     </td>
                     <td>
-                        <div class="{{game10}}"></div>
+                        <a href="{{storylink10}}" target="_top">
+                            <div class="{{result10}}" title="{{date10}} &bull; {{score10}}"></div>
+                        </a>
                     </td>
                     <td>
-                        <div class="{{game11}}"></div>
+                        <a href="{{storylink11}}" target="_top">
+                            <div class="{{result11}}" title="{{date11}} &bull; {{score11}}"></div>
+                        </a>
                     </td>
                     <td>
-                        <div class="{{game12}}"></div>
+                        <a href="{{storylink12}}" target="_top">
+                            <div class="{{result12}}" title="{{date12}} &bull; {{score12}}"></div>
+                        </a>
                     </td>
                     <td>
-                        <div class="{{game13}}"></div>
+                        <a href="{{storylink13}}" target="_top">
+                            <div class="{{result13}}" title="{{date13}} &bull; {{score13}}"></div>
+                        </a>
                     </td>
                     <td>
-                        <div class="{{game14}}"></div>
+                        <a href="{{storylink14}}" target="_top">
+                            <div class="{{result14}}" title="{{date14}} &bull; {{score14}}"></div>
+                        </a>
                     </td>
                     <td>
-                        <div class="{{game15}}"></div>
+                        <a href="{{storylink15}}" target="_top">
+                            <div class="{{result15}}" title="{{date15}} &bull; {{score15}}"></div>
+                        </a>
                     </td>
                     <td>
-                        <div class="{{game15}}"></div>
+                        <a href="{{storylink16}}" target="_top">
+                            <div class="{{result16}}" title="{{date16}} &bull; {{score16}}"></div>
+                        </a>
                     </td>
                     <td>
-                        <div class="{{game16}}"></div>
+                        <a href="{{storylink17}}" target="_top">
+                            <div class="{{result17}}" title="{{date17}} &bull; {{score}}17"></div>
+                        </a>
                     </td>
                     <td>
-                        <div class="{{game17}}"></div>
+                        <a href="{{storylink18}}" target="_top">
+                            <div class="{{result18}}" title="{{date18}} &bull; {{score18}}"></div>
+                        </a>
                     </td>
                     <td>
-                        <div class="{{game18}}"></div>
-                    </td>
-                    <td>
-                        <div class="{{game19}}"></div>
+                        <a href="{{storylink19}}" target="_top">
+                            <div class="{{result19}}" title="{{date19}} &bull; {{score19}}"></div>
+                        </a>
                     </td>
                 </tr>
                 {{/rows}}
