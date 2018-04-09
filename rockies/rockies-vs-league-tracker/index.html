@@ -11,6 +11,7 @@
     <style>
     body {
         font-family: Verdana, Helvetica, Arial, sans-serif;
+        background-color: #fafafa;
     }
 
     table {
@@ -65,20 +66,36 @@
         width: 120px;
     }
 
-    .lost {
-        background-color: #ccc;
-        height: 10px;
-        width: 10px;
+    .won {
+        background-color: #b65dff;
+        height: 14px;
+        width: 14px;
         margin: -4px;
         border: 1px solid #fff;
     }
 
-    .won {
-        background-color: purple;
-        height: 10px;
-        width: 10px;
+    .lost {
+        background-color: #ccc;
+        height: 14px;
+        width: 14px;
         margin: -4px;
         border: 1px solid #fff;
+    }
+
+    .onerunwon {
+    	background-color: #b65dff;
+        height: 11px;
+        width: 11px;
+        margin: -3px;
+        border: 1.5px solid #000;
+    }
+
+    .onerunlost {
+    	background-color: #ccc;
+        height: 11px;
+        width: 11px;
+        margin: -4px -3px -4px -3px;
+        border: 1.5px solid #000;
     }
 
     td.division {
@@ -91,9 +108,9 @@
 <body>
     <div class="container">
         <h2>Rockies vs ...</h2>
-        <div id="fullTable"></div>
+        <div id="rockies-table">Loading...</div>
     </div>
-    <script id="fullTable_template" type="text/html">
+    <script id="rockies-table_template" type="text/html">
         <table cellpadding="0">
             <tbody>
                 {{#rows}}
@@ -224,7 +241,7 @@
         var tableOptions = {
             "data": data,
             // "pagination": 10,
-            "tableDiv": "#fullTable",
+            "tableDiv": "#rockies-table",
             // "filterDiv": "#fullTableFilter"
         }
         console.log(data);
