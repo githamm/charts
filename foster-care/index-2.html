@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>Foster Care in Colorado</title>
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/c3/0.4.18/c3.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/c3/0.4.18/c3.js"></script>
+    <script src="//d3js.org/d3.v3.min.js " charset="utf-8 "></script>
+    <style>
+    #chart {
+        width: 600px;
+    }
+
+    .c3-chart-arcs-title {
+        font-size: 1.5rem;
+    }
+    </style>
+</head>
+
+<body>
+    <button onclick="startChart()">Start</button>
+    <div id="chart"></div>
+    <script>
+    var chart = c3.generate({
+        bindto: '#chart',
+        data: {
+            columns: [
+                ['Adopted', 22.2],
+                ['Other outcome', 77.8],
+            ],
+            type: 'donut'
+        },
+        donut: {
+            title: 'Age 0-2'
+        },
+        color: {
+            pattern: ['#ae1024', 'rgba(0,0,0,.7)']
+        }
+    });
+
+    function startChart() {
+        var chart = c3.generate({
+            bindto: '#chart',
+            data: {
+                columns: [
+                    ['Adopted', 22.2],
+                    ['Other outcome', 77.8],
+                ],
+                type: 'donut'
+            },
+            donut: {
+                title: 'Age 0-2'
+            },
+            color: {
+                pattern: ['#ae1024', 'rgba(0,0,0,.7)']
+            }
+        });
+        setTimeout(function() {
+            chart.load({
+                columns: [
+                    ['Adopted', 11.5],
+                    ['Other outcome', 88.5],
+                ],
+                type: 'donut'
+            });
+            d3.select('#chart .c3-chart-arcs-title').node().innerHTML = 'Age 3-5';
+        }, 2000);
+        setTimeout(function() {
+            chart.load({
+                columns: [
+                    ['Adopted', 7.2],
+                    ['Other outcome', 92.8],
+                ],
+                type: 'donut'
+            });
+            d3.select('#chart .c3-chart-arcs-title').node().innerHTML = 'Age 6-8';
+        }, 5500);
+        setTimeout(function() {
+            chart.load({
+                columns: [
+                    ['Adopted', 4.2],
+                    ['Other outcome', 95.8],
+                ],
+                type: 'donut'
+            });
+            d3.select('#chart .c3-chart-arcs-title').node().innerHTML = 'Age 9-11';
+        }, 8000);
+        setTimeout(function() {
+            chart.load({
+                columns: [
+                    ['Adopted', 2.0],
+                    ['Other outcome', 98.0],
+                ],
+                type: 'donut'
+            });
+            d3.select('#chart .c3-chart-arcs-title').node().innerHTML = 'Age 12-14';
+        }, 10500);
+        setTimeout(function() {
+            chart.load({
+                columns: [
+                    ['Adopted', 0.3],
+                    ['Other outcome', 99.7],
+                ],
+                type: 'donut'
+            });
+            d3.select('#chart .c3-chart-arcs-title').node().innerHTML = 'Age 15+';
+        }, 13500);
+    }
+    </script>
+</body>
+
+</html>

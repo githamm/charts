@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>Foster Care in Colorado</title>
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/c3/0.4.18/c3.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/c3/0.4.18/c3.js"></script>
+    <script src="//d3js.org/d3.v3.min.js " charset="utf-8 "></script>
+    <style>
+    #chart {
+        width: 600px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="chart"></div>
+    <script>
+    var chart = c3.generate({
+        bindto: '#chart',
+        data: {
+            columns: [
+                ['0-2 yrs', 61.2, 2, 24.2, 22.2]
+            ],
+            type: 'bar'
+        },
+        axis: {
+            x: {
+                type: 'category',
+                categories: ['Parents', 'Reunification w/ parents', 'Living w/ other relatives/kin', 'Adoption'],
+            }
+        }
+        // bar: {
+        //     width: {
+        //         ratio: 0.5 // this makes bar width 50% of length between ticks
+        //     }
+        //     // or
+        //     //width: 100 // this makes bar width 100px
+        // }
+    });
+
+    setTimeout(function() {
+        chart.load({
+            columns: [
+                ['3-5 yrs', 69.5, 1.5, 14.7, 11.5]
+            ],
+            type: 'bar'
+        });
+    }, 1500);
+
+    setTimeout(function() {
+        chart.load({
+            columns: [
+                ['6-8 yrs', 72.2, 1.8, 15, 7.2]
+            ],
+            type: 'bar'
+        });
+    }, 2500);
+    setTimeout(function() {
+        chart.load({
+            columns: [
+                ['9-11 yrs', 73.7, 2.7, 14, 4.2]
+            ],
+            type: 'bar'
+        });
+    }, 3500);
+    setTimeout(function() {
+        chart.load({
+            columns: [
+                ['12-14 yrs', 65.8, 5, 15.6, 2]
+            ],
+            type: 'bar'
+        });
+    }, 4500);
+    setTimeout(function() {
+        chart.load({
+            columns: [
+                ['15+ yrs', 48, 8.8, 11.7, 0.3]
+            ],
+            type: 'bar'
+        });
+    }, 5500);
+    </script>
+</body>
+
+</html>
