@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Colorado Rockies Charts | The Denver Post</title>
+    <link rel="stylesheet" href="//extras.denverpost.com/transgender/css/normalize.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.css" />
+    <link rel="stylesheet" href="//extras.denverpost.com/libraries/foundation/foundation-min.css" />
+    <script src="//extras.denverpost.com/libraries/datatables/jQuery-3.2.1/jquery-3.2.1.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+    <script src="//extras.denverpost.com/foundation/js/foundation.min.js"></script>
+    <script src="//extras.denverpost.com/app/homicide-report/js/d3.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="strikeout-pct"></div>
+    <script>
+    var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1IOW6CopK5BRcoCYSIXSAjYw6PHgatlRLu5gHBFWOEYI/';
+
+    function init() {
+        Tabletop.init({
+            key: publicSpreadsheetUrl,
+            callback: showInfo,
+            simpleSheet: true,
+            parseNumbers: true,
+            orderby: 'KtoAB',
+            reverse: true
+        })
+    }
+
+    function showInfo(data, tabletop) {
+
+        var strikeoutChart = c3.generate({
+            bindto: '#strikeout-pct',
+            size: {
+                height: 400
+            },
+            data: {
+                json: data,
+                keys: {
+                    x: 'Player',
+                    value: ['KtoAB']
+                },
+                type: 'bar',
+                labels: {
+                    //            format: function (v, id, i, j) { return "Default Format"; },
+                    format: {
+                        'KtoAB': d3.format('.0%'),
+                        //                data1: function (v, id, i, j) { return "Format for data1"; },
+                    }
+                },
+                colors: {
+                    // '2015': '#ccc',
+                    // '2016': '#bbb',
+                    // '2017': '#aaa',
+                    // '2018': 'rgba(142,16,36,1)'
+                },
+            },
+            axis: {
+                x: {
+                    type: 'category'
+                },
+                y: {
+                    tick: {
+                        values: ['.100', '.200', '.300', '.400']
+                    },
+                },
+                rotated: true
+            },
+            grid: {
+                y: {
+                    show: true
+                }
+            }
+        });
+    };
+
+    window.addEventListener('DOMContentLoaded', init)
+    </script>
+</body>
+
+</html>
