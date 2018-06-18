@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Election Charts</title>
+    <link rel="stylesheet" href="//extras.denverpost.com/transgender/css/normalize.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.css" />
+    <link rel="stylesheet" href="//extras.denverpost.com/libraries/foundation/foundation-min.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="//extras.denverpost.com/foundation/js/foundation.min.js"></script>
+    <script src="//extras.denverpost.com/app/homicide-report/js/d3.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="chart"></div>
+    <script>
+    $.getJSON('test-data.json', function(data) {
+        console.log(data);
+        var chart = c3.generate({
+            bindto: '#chart',
+            size: {
+                height: 125
+            },
+            data: {
+                json: data['candidates'],
+                type: 'bar',
+                // json: [{
+                //         "choice_name": "Laurie Schmidt",
+                //         "party_name": "",
+                //         "total_votes": 192,
+                //         "percent_of_votes": 43.44,
+                //         "registered_voters": 1206,
+                //         "ballots_cast": 449
+                //     },
+                //     {
+                //         "choice_name": "Christine Redman",
+                //         "party_name": "",
+                //         "total_votes": 250,
+                //         "percent_of_votes": 56.56,
+                //         "registered_voters": 1206,
+                //         "ballots_cast": 449
+                //     }
+                // ],
+                keys: {
+                    x: 'choice_name',
+                    value: ['total_votes']
+                },
+                labels: true
+            },
+            axis: {
+                x: {
+                    type: 'category'
+                },
+                rotated: true
+            },
+            bar: {
+                width: {
+                    ratio: 0.8
+                }
+            },
+            legend: {
+                hide: true
+            }
+        })
+    })
+    </script>
+</body>
+
+</html>

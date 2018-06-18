@@ -1,0 +1,18 @@
+[
+    {
+        "choice_name": "Laurie Schmidt",
+        "party_name": "R",
+        "total_votes": 192,
+        "percent_of_votes": 43.44,
+        "registered_voters": 1206,
+        "ballots_cast": 449
+    },
+{
+        "choice_name": "Christine Redman",
+        "party_name": "D",
+        "total_votes": 250,
+        "percent_of_votes": 56.56,
+        "registered_voters": 1206,
+        "ballots_cast": 449
+    }
+]
