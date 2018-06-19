@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Colorado Rockies Charts | The Denver Post</title>
+    <link rel="stylesheet" href="//extras.denverpost.com/transgender/css/normalize.css" />
+    <link rel="stylesheet" href="//extras.denverpost.com/libraries/foundation/foundation-min.css" />
+    <script src="//extras.denverpost.com/libraries/datatables/jQuery-3.2.1/jquery-3.2.1.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+    <script src="//extras.denverpost.com/foundation/js/foundation.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="large-4 medium-4 columns">
+            <canvas id="myChart2" width="400px" height="400px"></canvas>
+        </div>
+        <div class="large-4 medium-4 columns">
+            <canvas id="myChart3" width="400px" height="400px"></canvas>
+        </div>
+        <div class="large-4 medium-4 columns">
+            <canvas id="myChart" width="400px" height="400px"></canvas>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-4 medium-4 columns">
+            <canvas id="myChart4" width="400px" height="400px"></canvas>
+        </div>
+        <div class="large-4 medium-4 columns">
+            <canvas id="myChart5" width="400px" height="400px"></canvas>
+        </div>
+        <div class="large-4 medium-4 columns">
+            <canvas id="" width="400px" height="400px"></canvas>
+        </div>
+    </div>
+    <script>
+    var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1IOW6CopK5BRcoCYSIXSAjYw6PHgatlRLu5gHBFWOEYI/';
+
+    function init1() {
+        Tabletop.init({
+            key: publicSpreadsheetUrl,
+            callback: showInfo,
+            simpleSheet: true,
+            parseNumbers: true,
+            orderby: 'KtoAB',
+            //reverse: true
+        })
+
+
+        function showInfo(data, tabletop) {
+            // alert('Successfully processed!')
+            console.log(data);
+            var playerName = data.map(a => a.Player);
+            var atBats = data.map(a => a.AB);
+            var hits = data.map(a => a.H);
+            var strikeouts = data.map(a => a.K);
+            var battingAverage = data.map(a => a.Avg);
+            var strikeoutsPerAtBat = data.map(a => a.KtoAB * 100);
+
+            var ctx = document.getElementById("myChart").getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'horizontalBar',
+                data: {
+                    labels: playerName,
+                    datasets: [{
+                        label: 'Strikeout percentage',
+                        data: strikeoutsPerAtBat,
+                        backgroundColor: [
+                            'rgba(128,0,128,.4'
+                            //     'rgba(54, 162, 235, 0.2)',
+                            //     'rgba(255, 206, 86, 0.2)',
+                            //     'rgba(75, 192, 192, 0.2)',
+                            //     'rgba(153, 102, 255, 0.2)'
+                        ],
+                        //borderColor: [
+                        //     'rgba(128,0,128,.5)'
+                        //     'rgba(54, 162, 235, 1)',
+                        //     'rgba(255, 206, 86, 1)',
+                        //     'rgba(75, 192, 192, 1)',
+                        //     'rgba(153, 102, 255, 1)'
+                        //],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                // beginAtZero: true
+                                suggestedMin: 0,
+                                suggestedMax: .4,
+                                callback: function(value, index, values) {
+                                    return value + '%';
+                                }
+                            }
+                        }]
+                    },
+                    // title: {
+                    //     display: true,
+                    //     text: 'Strikeout percentage'
+                    // }
+                }
+            });
+        }
+    }
+
+    function init2() {
+        Tabletop.init({
+            key: publicSpreadsheetUrl,
+            callback: showInfo,
+            simpleSheet: true,
+            parseNumbers: true,
+            orderby: 'AB',
+            reverse: true
+        })
+
+
+        function showInfo(data, tabletop) {
+            // alert('Successfully processed!')
+            console.log(data);
+            var playerName = data.map(a => a.Player);
+            var atBats = data.map(a => a.AB);
+            var hits = data.map(a => a.H);
+            var strikeouts = data.map(a => a.K);
+            var battingAverage = data.map(a => a.Avg);
+            var strikeoutsPerAtBat = data.map(a => a.KtoAB * 100);
+
+            var ctx = document.getElementById("myChart2").getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'horizontalBar',
+                data: {
+                    labels: playerName,
+                    datasets: [{
+                        label: 'At bats',
+                        data: atBats,
+                        backgroundColor: [
+                            'rgba(128,0,128,.4'
+                            //     'rgba(54, 162, 235, 0.2)',
+                            //     'rgba(255, 206, 86, 0.2)',
+                            //     'rgba(75, 192, 192, 0.2)',
+                            //     'rgba(153, 102, 255, 0.2)'
+                        ],
+                        //borderColor: [
+                        //     'rgba(128,0,128,.5)'
+                        //     'rgba(54, 162, 235, 1)',
+                        //     'rgba(255, 206, 86, 1)',
+                        //     'rgba(75, 192, 192, 1)',
+                        //     'rgba(153, 102, 255, 1)'
+                        //],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            // ticks: {
+                            //     // beginAtZero: true
+                            //     suggestedMin: 0,
+                            //     suggestedMax: .4,
+                            //     callback: function(value, index, values) {
+                            //         return value + '%';
+                            //     }
+                            // }
+                        }]
+                    },
+                    // title: {
+                    //     display: true,
+                    //     text: 'Strikeout percentage'
+                    // }
+                }
+            });
+        }
+    }
+
+    function init3() {
+        Tabletop.init({
+            key: publicSpreadsheetUrl,
+            callback: showInfo,
+            simpleSheet: true,
+            parseNumbers: true,
+            orderby: 'OBP',
+            reverse: true
+        })
+
+
+        function showInfo(data, tabletop) {
+            // alert('Successfully processed!')
+            console.log(data);
+            var playerName = data.map(a => a.Player);
+            var atBats = data.map(a => a.AB);
+            var hits = data.map(a => a.H);
+            var strikeouts = data.map(a => a.K);
+            var battingAverage = data.map(a => a.Avg);
+            var onBasePercentage = data.map(a => a.OBP);
+            var strikeoutsPerAtBat = data.map(a => a.KtoAB * 100);
+
+            var ctx = document.getElementById("myChart3").getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'horizontalBar',
+                data: {
+                    labels: playerName,
+                    datasets: [{
+                        label: 'On base percentage',
+                        data: onBasePercentage,
+                        backgroundColor: [
+                            'rgba(128,0,128,.4'
+                            //     'rgba(54, 162, 235, 0.2)',
+                            //     'rgba(255, 206, 86, 0.2)',
+                            //     'rgba(75, 192, 192, 0.2)',
+                            //     'rgba(153, 102, 255, 0.2)'
+                        ],
+                        //borderColor: [
+                        //     'rgba(128,0,128,.5)'
+                        //     'rgba(54, 162, 235, 1)',
+                        //     'rgba(255, 206, 86, 1)',
+                        //     'rgba(75, 192, 192, 1)',
+                        //     'rgba(153, 102, 255, 1)'
+                        //],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            // ticks: {
+                            //     // beginAtZero: true
+                            //     suggestedMin: 0,
+                            //     suggestedMax: .4,
+                            //     callback: function(value, index, values) {
+                            //         return value + '%';
+                            //     }
+                            // }
+                        }]
+                    },
+                    // title: {
+                    //     display: true,
+                    //     text: 'Strikeout percentage'
+                    // }
+                }
+            });
+        }
+    }
+    function init4() {
+        Tabletop.init({
+            key: publicSpreadsheetUrl,
+            callback: showInfo,
+            simpleSheet: true,
+            parseNumbers: true,
+            orderby: 'HRtoAB',
+            reverse: true
+        })
+
+
+        function showInfo(data, tabletop) {
+            // alert('Successfully processed!')
+            console.log(data);
+            var playerName = data.map(a => a.Player);
+            var atBats = data.map(a => a.AB);
+            var hits = data.map(a => a.H);
+            var strikeouts = data.map(a => a.K);
+            var battingAverage = data.map(a => a.Avg);
+            var strikeoutsPerAtBat = data.map(a => a.KtoAB);
+            var homeRunsPerAtBat = data.map(a => a.HRtoAB);
+
+            var ctx = document.getElementById("myChart4").getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'horizontalBar',
+                data: {
+                    labels: playerName,
+                    datasets: [{
+                        label: 'Home run percentage',
+                        data: homeRunsPerAtBat,
+                        backgroundColor: [
+                            'rgba(128,0,128,.4'
+                            //     'rgba(54, 162, 235, 0.2)',
+                            //     'rgba(255, 206, 86, 0.2)',
+                            //     'rgba(75, 192, 192, 0.2)',
+                            //     'rgba(153, 102, 255, 0.2)'
+                        ],
+                        //borderColor: [
+                        //     'rgba(128,0,128,.5)'
+                        //     'rgba(54, 162, 235, 1)',
+                        //     'rgba(255, 206, 86, 1)',
+                        //     'rgba(75, 192, 192, 1)',
+                        //     'rgba(153, 102, 255, 1)'
+                        //],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                //beginAtZero: true
+                                //suggestedMin: 0,
+                                //suggestedMax: .4,
+                                //callback: function(value, index, values) {
+                                    //return value + '%';
+                                //}
+                            }
+                        }]
+                    },
+                    // title: {
+                    //     display: true,
+                    //     text: 'Strikeout percentage'
+                    // }
+                }
+            });
+        }
+    }
+    function init5() {
+        Tabletop.init({
+            key: publicSpreadsheetUrl,
+            callback: showInfo,
+            simpleSheet: true,
+            parseNumbers: true,
+            orderby: 'RBItoAB',
+            reverse: true
+        })
+
+
+        function showInfo(data, tabletop) {
+            // alert('Successfully processed!')
+            console.log(data);
+            var playerName = data.map(a => a.Player);
+            var atBats = data.map(a => a.AB);
+            var hits = data.map(a => a.H);
+            var strikeouts = data.map(a => a.K);
+            var battingAverage = data.map(a => a.Avg);
+            var strikeoutsPerAtBat = data.map(a => a.KtoAB);
+            var homeRunsPerAtBat = data.map(a => a.HRtoAB);
+            var rbiPerAtBat = data.map(a => a.RBItoAB);
+
+            var ctx = document.getElementById("myChart5").getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'horizontalBar',
+                data: {
+                    labels: playerName,
+                    datasets: [{
+                        label: 'RBI percentage',
+                        data: rbiPerAtBat,
+                        backgroundColor: [
+                            'rgba(128,0,128,.4'
+                            //     'rgba(54, 162, 235, 0.2)',
+                            //     'rgba(255, 206, 86, 0.2)',
+                            //     'rgba(75, 192, 192, 0.2)',
+                            //     'rgba(153, 102, 255, 0.2)'
+                        ],
+                        //borderColor: [
+                        //     'rgba(128,0,128,.5)'
+                        //     'rgba(54, 162, 235, 1)',
+                        //     'rgba(255, 206, 86, 1)',
+                        //     'rgba(75, 192, 192, 1)',
+                        //     'rgba(153, 102, 255, 1)'
+                        //],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                //beginAtZero: true
+                                //suggestedMin: 0,
+                                //suggestedMax: .4,
+                                //callback: function(value, index, values) {
+                                    //return value + '%';
+                                //}
+                            }
+                        }]
+                    },
+                    // title: {
+                    //     display: true,
+                    //     text: 'Strikeout percentage'
+                    // }
+                }
+            });
+        }
+    }
+    window.addEventListener('DOMContentLoaded', init1)
+    window.addEventListener('DOMContentLoaded', init2)
+    window.addEventListener('DOMContentLoaded', init3)
+    window.addEventListener('DOMContentLoaded', init4)
+    window.addEventListener('DOMContentLoaded', init5)
+    </script>
+</body>
+
+</html>
