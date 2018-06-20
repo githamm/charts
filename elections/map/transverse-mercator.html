@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.tract {
+  fill: #eee;
+}
+
+.tract:hover {
+  fill: orange;
+}
+
+.county-border {
+  fill: none;
+  stroke: #777;
+  pointer-events: none;
+}
+
+</style>
+<svg width="960" height="1200"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script>
+
+var svg = d3.select("svg"),
+    width = +svg.attr("width"),
+    height = +svg.attr("height");
+
+d3.json("colorado-counties-topojson.json", function(error, colo) {
+  if (error) throw error;
+
+  var map = topojson.feature(colo, {
+    type: "GeometryCollection",
+    geometries: colo.objects.Colorado_County_Boundaries.geometries.filter(function(d) {
+      return (d.id / 10000 | 0) % 100 !== 99;
+    })
+  });
+
+  // EPSG:32111
+  var path = d3.geoPath()
+      .projection(d3.geoTransverseMercator()
+          .rotate([105 + 30 / 60, -39 - 20 / 60])
+          .fitExtent([[20, 20], [940, 480]], map));
+
+  svg.selectAll("path")
+    .data(map.features)
+    .enter().append("path")
+      .attr("class", "tract")
+      .attr("d", path)
+    .append("title")
+      .text(function(d) { return d.id; });
+
+  svg.append("path")
+      .datum(topojson.mesh(colo, colo.objects.Colorado_County_Boundaries, function(a, b) { return a !== b; }))
+      .attr("class", "county-border")
+      .attr("d", path);
+});
+
+</script>
