@@ -9,9 +9,89 @@
     },
 {
         "choice_name": "Christine Redman",
-        "party_name": "D",
+        "party_name": "G",
         "total_votes": 250,
         "percent_of_votes": 56.56,
+        "registered_voters": 1206,
+        "ballots_cast": 449
+    },
+    {
+        "choice_name": "Joe Schmoe",
+        "party_name": "D",
+        "total_votes": 6000,
+        "percent_of_votes": 60,
+        "registered_voters": 1206,
+        "ballots_cast": 449
+    },
+{
+        "choice_name": "Schmoe Joe",
+        "party_name": "L",
+        "total_votes": 4000,
+        "percent_of_votes": 40,
+        "registered_voters": 1206,
+        "ballots_cast": 449
+    },
+    {
+        "choice_name": "Lori Schmidt",
+        "party_name": "R",
+        "total_votes": 192,
+        "percent_of_votes": 43.44,
+        "registered_voters": 1206,
+        "ballots_cast": 449
+    },
+{
+        "choice_name": "Chris Redman",
+        "party_name": "G",
+        "total_votes": 250,
+        "percent_of_votes": 56.56,
+        "registered_voters": 1206,
+        "ballots_cast": 449
+    },
+    {
+        "choice_name": "Joseph Schmoe",
+        "party_name": "D",
+        "total_votes": 6000,
+        "percent_of_votes": 60,
+        "registered_voters": 1206,
+        "ballots_cast": 449
+    },
+{
+        "choice_name": "Schmoseph Joe",
+        "party_name": "L",
+        "total_votes": 4000,
+        "percent_of_votes": 40,
+        "registered_voters": 1206,
+        "ballots_cast": 449
+    },
+    {
+        "choice_name": "Lori Schmidt",
+        "party_name": "R",
+        "total_votes": 192,
+        "percent_of_votes": 43.44,
+        "registered_voters": 1206,
+        "ballots_cast": 449
+    },
+{
+        "choice_name": "Chris Redman",
+        "party_name": "G",
+        "total_votes": 250,
+        "percent_of_votes": 56.56,
+        "registered_voters": 1206,
+        "ballots_cast": 449
+    },
+    {
+        "choice_name": "Joseph Schmoe",
+        "party_name": "D",
+        "total_votes": 6000,
+        "percent_of_votes": 60,
+        "registered_voters": 1206,
+        "ballots_cast": 449
+    },
+{
+        "choice_name": "Schmoseph Joe",
+        "party_name": "L",
+        "total_votes": 4000,
+        "percent_of_votes": 40,
         "registered_voters": 1206,
         "ballots_cast": 449
     }

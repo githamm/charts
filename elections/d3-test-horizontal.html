@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -7,68 +6,73 @@
     <title>Simple Bar chart</title>
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <style>
-        body {
-            font-family: "Arial", sans-serif;
-        }
-        
-        .bar {
-            fill: #5f89ad;
-        }
-        
-        .axis {
-            font-size: 13px;
-        }
-        
-        .axis path,
-        .axis line {
-            fill: none;
-            display: none;
-        }
-        
-        .label {
-            font-size: 13px;
-        }
-    </style>
+    body {
+        font-family: "Arial", sans-serif;
+    }
 
+    .bar {
+        fill: #5f89ad;
+    }
+
+    .republican {
+        fill: red;
+    }
+
+    .democrat {
+        fill: blue;
+    }
+
+    .axis {
+        font-size: 13px;
+    }
+
+    .axis path,
+    .axis line {
+        fill: none;
+        display: none;
+    }
+
+    .label {
+        font-size: 13px;
+    }
+    </style>
 </head>
 
 <body>
-
-    <div id="graphic"></div>
-
+    <div id="chart"></div>
     <script>
-        // var data = [{
-        //         "name": "Apples",
-        //         "value": 20,
-        // },
-        //     {
-        //         "name": "Bananas",
-        //         "value": 12,
-        // },
-        //     {
-        //         "name": "Grapes",
-        //         "value": 19,
-        // },
-        //     {
-        //         "name": "Lemons",
-        //         "value": 5,
-        // },
-        //     {
-        //         "name": "Limes",
-        //         "value": 16,
-        // },
-        //     {
-        //         "name": "Oranges",
-        //         "value": 26,
-        // },
-        //     {
-        //         "name": "Pears",
-        //         "value": 30,
-        // }];
-d3.json("d3-test-data.json", function(error, data) {
+    // var data = [{
+    //         "name": "Apples",
+    //         "value": 20,
+    // },
+    //     {
+    //         "name": "Bananas",
+    //         "value": 12,
+    // },
+    //     {
+    //         "name": "Grapes",
+    //         "value": 19,
+    // },
+    //     {
+    //         "name": "Lemons",
+    //         "value": 5,
+    // },
+    //     {
+    //         "name": "Limes",
+    //         "value": 16,
+    // },
+    //     {
+    //         "name": "Oranges",
+    //         "value": 26,
+    // },
+    //     {
+    //         "name": "Pears",
+    //         "value": 30,
+    // }];
+    d3.json("d3-test-data.json", function(error, data) {
         //sort bars based on value
-        data = data.sort(function (a, b) {
-            return d3.ascending(a.value, b.value);
+        data = data.sort(function(a, b) {
+            return d3.ascending(a.percent_of_votes, b.percent_of_votes);
         })
 
         //set up svg using margin conventions - we'll need plenty of room on the left for labels
@@ -76,27 +80,29 @@ d3.json("d3-test-data.json", function(error, data) {
             top: 15,
             right: 25,
             bottom: 15,
-            left: 120
+            left: 140
         };
 
         var width = 960 - margin.left - margin.right,
             height = 150 - margin.top - margin.bottom;
 
-        var svg = d3.select("#graphic").append("svg")
-            .attr("width", width + margin.left + margin.right)
+        var svg = d3.select("#chart").append("svg")
+            .attr("width", width + margin.left + margin.right) 
             .attr("height", height + margin.top + margin.bottom)
+            // .attr("preserveAspectRatio", "xMinYMin meet")
+            // .attr("viewBox", "0 0 960 500")
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         var x = d3.scale.linear()
             .range([0, width])
-            .domain([0, d3.max(data, function (d) {
-                return d.total_votes;
+            .domain([0, d3.max(data, function(d) {
+                return d.percent_of_votes;
             })]);
 
         var y = d3.scale.ordinal()
-            .rangeRoundBands([height, 0], .1)
-            .domain(data.map(function (d) {
+            .rangeRoundBands([height, 0], .2)
+            .domain(data.map(function(d) {
                 return d.choice_name;
             }));
 
@@ -118,34 +124,33 @@ d3.json("d3-test-data.json", function(error, data) {
 
         //append rects
         bars.append("rect")
-            .attr("class", "bar")
-            .attr("y", function (d) {
+            .attr("fill", function(d) { if (d.party_name == "D") { return "rgba(0,0,255,.4)" } else if (d.party_name == "R") { return "rgba(255,0,0,.4)" } else { return "rgba(0,0,0,.1)" } }) // colors bar on party name
+            //.attr("class", "bar") // colors bar on class
+            .attr("y", function(d) {
                 return y(d.choice_name);
             })
             .attr("height", y.rangeBand())
             .attr("x", 0)
-            .attr("width", function (d) {
-                return x(d.total_votes);
+            .attr("width", function(d) {
+                return x(d.percent_of_votes);
             });
 
         //add a value label to the right of each bar
         bars.append("text")
             .attr("class", "label")
             //y position of the label is halfway down the bar
-            .attr("y", function (d) {
+            .attr("y", function(d) {
                 return y(d.choice_name) + y.rangeBand() / 2 + 4;
             })
             //x position is 3 pixels to the right of the bar
-            .attr("x", function (d) {
-                return x(d.total_votes) + 3;
+            .attr("x", function(d) {
+                return x(d.percent_of_votes) - 55;
             })
-            .text(function (d) {
-                return d.total_votes;
+            .text(function(d) {
+                return d.percent_of_votes + "%";
             });
-        })
-        
+    })
     </script>
-
 </body>
 
 </html>
