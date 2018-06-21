@@ -1,0 +1,90 @@
+[
+{
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Aurora Council Member At-Large",
+    "K": "1",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 2,
+    "TP": 173,
+    "PR": 170,
+    "TV": 0,
+    "BC": 0,
+    "RC": 1,
+    "RO": 0,
+    "CH": [
+        "Brian E. Arnold",
+        "Dave Gruber",
+        "Reid Hettich",
+        "Allison Hiltz",
+        "Tim Huffman",
+        "Abel Laeke",
+        "Tom Tobiassen",
+        "Russ Wagner"
+    ],
+    "P": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+    ],
+    "PCT": [
+        10.5076000557802,
+        17.7785525031376,
+        3.75679821503277,
+        22.4877980755822,
+        15.437177520569,
+        3.77771579974899,
+        17.6753590852043,
+        8.57899874494492
+    ],
+    "V": [
+        7535,
+        12749,
+        2694,
+        16126,
+        11070,
+        2709,
+        12675,
+        6152
+    ],
+    "W": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+    ],
+    "CRC": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+    ],
+    "CRO": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+}]

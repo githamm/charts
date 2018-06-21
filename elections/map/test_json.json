@@ -1,0 +1,2369 @@
+[
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Aurora Council Member At-Large",
+    "K": "1",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 2,
+    "TP": 173,
+    "PR": 170,
+    "TV": 0,
+    "BC": 0,
+    "RC": 1,
+    "RO": 0,
+    "CH": [
+      "Brian E. Arnold",
+      "Dave Gruber",
+      "Reid Hettich",
+      "Allison Hiltz",
+      "Tim Huffman",
+      "Abel Laeke",
+      "Tom Tobiassen",
+      "Russ Wagner"
+    ],
+    "P": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "PCT": [
+      10.5076000557802,
+      17.7785525031376,
+      3.75679821503277,
+      22.4877980755822,
+      15.437177520569,
+      3.77771579974899,
+      17.6753590852043,
+      8.57899874494492
+    ],
+    "V": [
+      7535,
+      12749,
+      2694,
+      16126,
+      11070,
+      2709,
+      12675,
+      6152
+    ],
+    "W": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Aurora Council Member Ward I",
+    "K": "7",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 10,
+    "PR": 10,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Sally Mounier",
+      "Crystal Murillo"
+    ],
+    "P": [
+      "",
+      ""
+    ],
+    "PCT": [
+      39.2819429778247,
+      60.7180570221753
+    ],
+    "V": [
+      744,
+      1150
+    ],
+    "W": [
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Aurora Council Member Ward II",
+    "K": "8",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 25,
+    "PR": 24,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Bob Hagedorn",
+      "Nicole Emily Johnston",
+      "Ruben L. Medina",
+      "Robert E. O'Riley",
+      "Jeff Wilson"
+    ],
+    "P": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "PCT": [
+      23.4065460809647,
+      50.5167958656331,
+      7.98880275624462,
+      12.2954349698536,
+      5.79242032730405
+    ],
+    "V": [
+      1087,
+      2346,
+      371,
+      571,
+      269
+    ],
+    "W": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Aurora Council Member Ward III",
+    "K": "9",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 30,
+    "PR": 30,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Marsha Berzins",
+      "Robert Hargrove",
+      "Debi Hunter Holen",
+      "Martha Lugo",
+      "Naquetta Ricks"
+    ],
+    "P": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "PCT": [
+      34.9677881173944,
+      8.12455261274159,
+      16.2670007158196,
+      22.5483178239084,
+      18.092340730136
+    ],
+    "V": [
+      1954,
+      454,
+      909,
+      1260,
+      1011
+    ],
+    "W": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Centennial Mayor",
+    "K": "2",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 84,
+    "PR": 84,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Charles ''C.J.'' Whelan III",
+      "Stephanie Piko"
+    ],
+    "P": [
+      "",
+      ""
+    ],
+    "PCT": [
+      44.6070973313047,
+      55.3929026686953
+    ],
+    "V": [
+      10848,
+      13471
+    ],
+    "W": [
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Centennial Council Member District 1",
+    "K": "10",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 22,
+    "PR": 22,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Kathy Turley"
+    ],
+    "P": [
+      ""
+    ],
+    "PCT": [
+      100
+    ],
+    "V": [
+      5470
+    ],
+    "W": [
+      0
+    ],
+    "CRC": [
+      0
+    ],
+    "CRO": [
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Centennial Council Member District 2",
+    "K": "11",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 20,
+    "PR": 20,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Bennett Rutledge",
+      "Tammy Maurer",
+      "Doris Truhlar",
+      "Nancy Nickless"
+    ],
+    "P": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "PCT": [
+      14.1293532338308,
+      41.9734660033168,
+      28.8888888888889,
+      15.0082918739635
+    ],
+    "V": [
+      852,
+      2531,
+      1742,
+      905
+    ],
+    "W": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Centennial Council Member District 3",
+    "K": "12",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 25,
+    "PR": 25,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Mike Sutherland"
+    ],
+    "P": [
+      ""
+    ],
+    "PCT": [
+      100
+    ],
+    "V": [
+      4963
+    ],
+    "W": [
+      0
+    ],
+    "CRC": [
+      0
+    ],
+    "CRO": [
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Centennial Council Member District 4",
+    "K": "13",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 19,
+    "PR": 19,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Charlette Fleming",
+      "John Miquel",
+      "Marlo Alston"
+    ],
+    "P": [
+      "",
+      "",
+      ""
+    ],
+    "PCT": [
+      33.9567747298421,
+      31.7747298420615,
+      34.2684954280964
+    ],
+    "V": [
+      1634,
+      1529,
+      1649
+    ],
+    "W": [
+      0,
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Englewood Office of Council Member At-Large",
+    "K": "3",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 25,
+    "PR": 25,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Steven R. Yates",
+      "Joe Anderson",
+      "Cheryl Wink"
+    ],
+    "P": [
+      "",
+      "",
+      ""
+    ],
+    "PCT": [
+      23.8736313049722,
+      30.6408185245019,
+      45.4855501705259
+    ],
+    "V": [
+      1330,
+      1707,
+      2534
+    ],
+    "W": [
+      0,
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Englewood Office of Municipal Judge",
+    "K": "4",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 25,
+    "PR": 25,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Clifton Hypsher",
+      "Joe Jefferson",
+      "Angie Schmitz"
+    ],
+    "P": [
+      "",
+      "",
+      ""
+    ],
+    "PCT": [
+      9.21683537559936,
+      50.7014739833067,
+      40.0816906410939
+    ],
+    "V": [
+      519,
+      2855,
+      2257
+    ],
+    "W": [
+      0,
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Englewood Office of Council Member District 2",
+    "K": "14",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 8,
+    "PR": 8,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Linda Olson"
+    ],
+    "P": [
+      ""
+    ],
+    "PCT": [
+      100
+    ],
+    "V": [
+      1125
+    ],
+    "W": [
+      0
+    ],
+    "CRC": [
+      0
+    ],
+    "CRO": [
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Englewood Office of Council Member District 4",
+    "K": "15",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 7,
+    "PR": 7,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Rick Gillit",
+      "Dave Cuesta"
+    ],
+    "P": [
+      "",
+      ""
+    ],
+    "PCT": [
+      47.9360852197071,
+      52.0639147802929
+    ],
+    "V": [
+      720,
+      782
+    ],
+    "W": [
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Greenwood Village Councilmember District 1",
+    "K": "16",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 2,
+    "TP": 4,
+    "PR": 4,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Freda Miklin",
+      "Dave Bullock",
+      "Jerry Presley"
+    ],
+    "P": [
+      "",
+      "",
+      ""
+    ],
+    "PCT": [
+      20.4331121201537,
+      43.5906391896612,
+      35.9762486901851
+    ],
+    "V": [
+      585,
+      1248,
+      1030
+    ],
+    "W": [
+      0,
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Greenwood Village Councilmember District 2",
+    "K": "17",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 2,
+    "TP": 3,
+    "PR": 3,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Dave Kerber",
+      "Anne Ingebretsen",
+      "Darryl Jones",
+      "Henry Siegel",
+      "Seanna Mulligan"
+    ],
+    "P": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "PCT": [
+      28.5252960172228,
+      29.2787944025834,
+      19.7524219590958,
+      5.32831001076426,
+      17.1151776103337
+    ],
+    "V": [
+      530,
+      544,
+      367,
+      99,
+      318
+    ],
+    "W": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Greenwood Village Councilmember District 3",
+    "K": "18",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 2,
+    "TP": 4,
+    "PR": 4,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Steve Moran",
+      "George Lantz"
+    ],
+    "P": [
+      "",
+      ""
+    ],
+    "PCT": [
+      50.2621722846442,
+      49.7378277153558
+    ],
+    "V": [
+      671,
+      664
+    ],
+    "W": [
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Greenwood Village Councilmember District 4",
+    "K": "19",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 2,
+    "TP": 4,
+    "PR": 4,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Jeff Kahn",
+      "T.J. Gordon",
+      "Thomas J. Dougherty",
+      "Judith M. Hilton"
+    ],
+    "P": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "PCT": [
+      9.51847704367301,
+      29.2833146696529,
+      29.451287793953,
+      31.7469204927212
+    ],
+    "V": [
+      170,
+      523,
+      526,
+      567
+    ],
+    "W": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Littleton Council Member at Large",
+    "K": "5",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 2,
+    "TP": 33,
+    "PR": 33,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Kyle Schlachter",
+      "Karina Elrod",
+      "Doug Clark",
+      "Carol Brzeczek"
+    ],
+    "P": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "PCT": [
+      25.4061738424045,
+      25.9545085296507,
+      24.8578391551584,
+      23.7814784727864
+    ],
+    "V": [
+      5004,
+      5112,
+      4896,
+      4684
+    ],
+    "W": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Littleton Council Member District I",
+    "K": "105",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 10,
+    "PR": 10,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Patrick Driscoll",
+      "Kama Suddath"
+    ],
+    "P": [
+      "",
+      ""
+    ],
+    "PCT": [
+      56.740614334471,
+      43.259385665529
+    ],
+    "V": [
+      1330,
+      1014
+    ],
+    "W": [
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Littleton Council Member District III",
+    "K": "21",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 11,
+    "PR": 11,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Phil Cernanec",
+      "Carol Fey",
+      "Steven Esses"
+    ],
+    "P": [
+      "",
+      "",
+      ""
+    ],
+    "PCT": [
+      40.8359220559164,
+      52.2451284947755,
+      6.91894944930811
+    ],
+    "V": [
+      1446,
+      1850,
+      245
+    ],
+    "W": [
+      0,
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Sheridan Mayor",
+    "K": "6",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 3,
+    "PR": 3,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Tara Beiter-Fluhr",
+      "Cecilia Carpenter",
+      "Vernon Pishna",
+      "Ernie Camacho",
+      "David Black"
+    ],
+    "P": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "PCT": [
+      34.1943419434194,
+      13.6531365313653,
+      10.5781057810578,
+      23.7392373923739,
+      17.8351783517835
+    ],
+    "V": [
+      278,
+      111,
+      86,
+      193,
+      145
+    ],
+    "W": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Sheridan City Council Member Ward 1",
+    "K": "22",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 1,
+    "PR": 1,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Leon Hartness",
+      "R. Landau de Laguna"
+    ],
+    "P": [
+      "",
+      ""
+    ],
+    "PCT": [
+      47.4418604651163,
+      52.5581395348837
+    ],
+    "V": [
+      102,
+      113
+    ],
+    "W": [
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Sheridan City Council Member Ward 2",
+    "K": "23",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 2,
+    "PR": 2,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Bobbie Mooney"
+    ],
+    "P": [
+      ""
+    ],
+    "PCT": [
+      100
+    ],
+    "V": [
+      196
+    ],
+    "W": [
+      0
+    ],
+    "CRC": [
+      0
+    ],
+    "CRO": [
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "Adams-Arapahoe School District 28J Board of Directors At-Large",
+    "K": "24",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 4,
+    "TP": 98,
+    "PR": 94,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Kevin Cox",
+      "Debbie Gerkin",
+      "Gail Pough",
+      "Jane F. Barber",
+      "Miguel In Suk Lovato",
+      "Kyla Alysia Armstrong-Romero",
+      "Lea Steed",
+      "Marques Alexander Ivey",
+      "Barbara J. Yamrick"
+    ],
+    "P": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "PCT": [
+      16.5810446389563,
+      16.3249318287961,
+      9.62682857013725,
+      7.08980520360968,
+      8.86903596125164,
+      15.1272278048119,
+      6.24312638413908,
+      13.0617533181674,
+      7.07624629013062
+    ],
+    "V": [
+      11006,
+      10836,
+      6390,
+      4706,
+      5887,
+      10041,
+      4144,
+      8670,
+      4697
+    ],
+    "W": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "Bennett School District 29J School Director at Large",
+    "K": "25",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 2,
+    "TP": 3,
+    "PR": 2,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Zebulen A. Petre",
+      "James DuBois",
+      "Kyle Meyer"
+    ],
+    "P": [
+      "",
+      "",
+      ""
+    ],
+    "PCT": [
+      25.2262443438914,
+      30.4298642533937,
+      44.3438914027149
+    ],
+    "V": [
+      223,
+      269,
+      392
+    ],
+    "W": [
+      0,
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "Byers School District 32J School Board Director",
+    "K": "26",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 3,
+    "TP": 1,
+    "PR": 1,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Jay Bauer",
+      "Donna J. Sauer",
+      "Charles ''Charlie'' Tucker"
+    ],
+    "P": [
+      "",
+      "",
+      ""
+    ],
+    "PCT": [
+      33.3333333333333,
+      33.698296836983,
+      32.9683698296837
+    ],
+    "V": [
+      274,
+      277,
+      271
+    ],
+    "W": [
+      0,
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "Englewood School District School Board Director",
+    "K": "27",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 3,
+    "TP": 22,
+    "PR": 22,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Todd Fahnestock",
+      "Jennifer Hubbard",
+      "Carl Montegna Jr.",
+      "Caty Husbands",
+      "Tena Prange"
+    ],
+    "P": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "PCT": [
+      15.7371671169433,
+      25,
+      12.157468159012,
+      23.0509455808568,
+      24.054419143188
+    ],
+    "V": [
+      1631,
+      2591,
+      1260,
+      2389,
+      2493
+    ],
+    "W": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "Sheridan School District No. 2 Board of Education Director District A",
+    "K": "28",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 7,
+    "PR": 7,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Daniel C. Stange",
+      "Ronald L. Carter"
+    ],
+    "P": [
+      "",
+      ""
+    ],
+    "PCT": [
+      55.195530726257,
+      44.804469273743
+    ],
+    "V": [
+      494,
+      401
+    ],
+    "W": [
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "Sheridan School District No. 2 Board of Education Director District C",
+    "K": "29",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 7,
+    "PR": 7,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Sally J. Daigle",
+      "Karla L. Cuevas Flores"
+    ],
+    "P": [
+      "",
+      ""
+    ],
+    "PCT": [
+      52.4076147816349,
+      47.5923852183651
+    ],
+    "V": [
+      468,
+      425
+    ],
+    "W": [
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "Sheridan School District No. 2 Board of Education Director District D",
+    "K": "115",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 7,
+    "PR": 7,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Karla Najera"
+    ],
+    "P": [
+      ""
+    ],
+    "PCT": [
+      100
+    ],
+    "V": [
+      796
+    ],
+    "W": [
+      0
+    ],
+    "CRC": [
+      0
+    ],
+    "CRO": [
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "Sheridan School District No. 2 Board of Education Director District E",
+    "K": "31",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 7,
+    "PR": 7,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Bernadette Saleh",
+      "Indira S. Guzman-Sais"
+    ],
+    "P": [
+      "",
+      ""
+    ],
+    "PCT": [
+      51.7006802721088,
+      48.2993197278912
+    ],
+    "V": [
+      456,
+      426
+    ],
+    "W": [
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Sheridan Ballot Issue 2A",
+    "K": "35",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 3,
+    "PR": 3,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Yes",
+      "No"
+    ],
+    "P": [
+      "",
+      ""
+    ],
+    "PCT": [
+      60.8333333333333,
+      39.1666666666667
+    ],
+    "V": [
+      511,
+      329
+    ],
+    "W": [
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "Town of Foxfield Ballot Issue 2B",
+    "K": "36",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 2,
+    "PR": 2,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Yes",
+      "No"
+    ],
+    "P": [
+      "",
+      ""
+    ],
+    "PCT": [
+      42.2222222222222,
+      57.7777777777778
+    ],
+    "V": [
+      152,
+      208
+    ],
+    "W": [
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Littleton Ballot Issue 2C",
+    "K": "33",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 33,
+    "PR": 33,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Yes",
+      "No"
+    ],
+    "P": [
+      "",
+      ""
+    ],
+    "PCT": [
+      78.6413930709233,
+      21.3586069290767
+    ],
+    "V": [
+      8671,
+      2355
+    ],
+    "W": [
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Littleton Ballot Issue 2D",
+    "K": "34",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 33,
+    "PR": 33,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Yes",
+      "No"
+    ],
+    "P": [
+      "",
+      ""
+    ],
+    "PCT": [
+      66.1223360088569,
+      33.8776639911431
+    ],
+    "V": [
+      7167,
+      3672
+    ],
+    "W": [
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Aurora Ballot Question 2K",
+    "K": "32",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 173,
+    "PR": 170,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Yes",
+      "No"
+    ],
+    "P": [
+      "",
+      ""
+    ],
+    "PCT": [
+      51.1319008429847,
+      48.8680991570153
+    ],
+    "V": [
+      20441,
+      19536
+    ],
+    "W": [
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "Byers School District 32J Ballot Question 3A",
+    "K": "37",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 1,
+    "PR": 1,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Yes",
+      "No"
+    ],
+    "P": [
+      "",
+      ""
+    ],
+    "PCT": [
+      14.7619047619048,
+      85.2380952380952
+    ],
+    "V": [
+      62,
+      358
+    ],
+    "W": [
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "Byers School District 32J Ballot Question 3B",
+    "K": "38",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 1,
+    "PR": 1,
+    "TV": 0,
+    "BC": 0,
+    "RC": 1,
+    "RO": 0,
+    "CH": [
+      "For",
+      "Against"
+    ],
+    "P": [
+      "",
+      ""
+    ],
+    "PCT": [
+      50.7177033492823,
+      49.2822966507177
+    ],
+    "V": [
+      212,
+      206
+    ],
+    "W": [
+      0,
+      0
+    ],
+    "CRC": [
+      1,
+      0
+    ],
+    "CRO": [
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "Valley Sanitation District Ballot Issue 4A",
+    "K": "45",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 8,
+    "PR": 8,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Yes",
+      "No"
+    ],
+    "P": [
+      "",
+      ""
+    ],
+    "PCT": [
+      69.9145299145299,
+      30.0854700854701
+    ],
+    "V": [
+      818,
+      352
+    ],
+    "W": [
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "South Suburban Park and Recreation District Ballot Issue 4B",
+    "K": "42",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 100,
+    "PR": 99,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Yes",
+      "No"
+    ],
+    "P": [
+      "",
+      ""
+    ],
+    "PCT": [
+      79.2160797907924,
+      20.7839202092076
+    ],
+    "V": [
+      26051,
+      6835
+    ],
+    "W": [
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "South Suburban Park and Recreation District Ballot Issue 4C",
+    "K": "43",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 100,
+    "PR": 99,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Yes",
+      "No"
+    ],
+    "P": [
+      "",
+      ""
+    ],
+    "PCT": [
+      69.8131011810544,
+      30.1868988189456
+    ],
+    "V": [
+      22935,
+      9917
+    ],
+    "W": [
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "Bennett Fire Protection District No. 7 Ballot Issue 4D",
+    "K": "39",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 7,
+    "PR": 5,
+    "TV": 0,
+    "BC": 0,
+    "RC": 1,
+    "RO": 0,
+    "CH": [
+      "Yes",
+      "No"
+    ],
+    "P": [
+      "",
+      ""
+    ],
+    "PCT": [
+      53.9835164835165,
+      46.0164835164835
+    ],
+    "V": [
+      393,
+      335
+    ],
+    "W": [
+      0,
+      0
+    ],
+    "CRC": [
+      1,
+      0
+    ],
+    "CRO": [
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "Sable-Altura Fire Protection District Ballot Issue 4E",
+    "K": "125",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 9,
+    "PR": 6,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Yes",
+      "No"
+    ],
+    "P": [
+      "",
+      ""
+    ],
+    "PCT": [
+      54.9107142857143,
+      45.0892857142857
+    ],
+    "V": [
+      123,
+      101
+    ],
+    "W": [
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "Strasburg Fire Protection District No. 8 Ballot Issue 4F",
+    "K": "41",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 4,
+    "PR": 4,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Yes",
+      "No"
+    ],
+    "P": [
+      "",
+      ""
+    ],
+    "PCT": [
+      49.7340425531915,
+      50.2659574468085
+    ],
+    "V": [
+      187,
+      189
+    ],
+    "W": [
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  },
+  {
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "Sheridan Sanitation District No. 1 Ballot Issue 5A",
+    "K": "44",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 1,
+    "TP": 3,
+    "PR": 3,
+    "TV": 0,
+    "BC": 0,
+    "RC": 0,
+    "RO": 0,
+    "CH": [
+      "Yes",
+      "No"
+    ],
+    "P": [
+      "",
+      ""
+    ],
+    "PCT": [
+      52.1739130434783,
+      47.8260869565217
+    ],
+    "V": [
+      72,
+      66
+    ],
+    "W": [
+      0,
+      0
+    ],
+    "CRC": [
+      0,
+      0
+    ],
+    "CRO": [
+      0,
+      0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+  }
+]

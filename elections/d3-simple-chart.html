@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <meta charset="utf-8">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="//d3js.org/d3.v3.min.js"></script>
 <style>
 .chart rect {
     fill: steelblue;
@@ -15,7 +17,6 @@
 
 <body>
     <svg class="chart"></svg>
-    <script src="//d3js.org/d3.v3.min.js"></script>
     <script>
     var width = 420,
         barHeight = 20;
@@ -26,30 +27,37 @@
     var chart = d3.select(".chart")
         .attr("width", width);
 
-    d3.json("d3-test-data.json", function(error, data) {
-        x.domain([0, d3.max(data, function(d) { return d.percent_of_votes; })]);
+    var arr = [];
+    $.getJSON("test_json_blob.json", function(data) {
+        arr.push(data[0].PCT);
+        // console.log(arr);
+    });
 
-        chart.attr("height", barHeight * data.length);
+    d3.json("d3-test-data.json", function(error, data) {
+        console.log(data);
+        x.domain([0, d3.max(arr, function(d) { return d.arr; })]);
+
+        chart.attr("height", barHeight * arr.length);
 
         var bar = chart.selectAll("g")
-            .data(data)
+            .data(arr)
             .enter().append("g")
             .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
 
         bar.append("rect")
-            .attr("width", function(d) { return x(d.percent_of_votes); })
+            .attr("width", function(d) { return x(d.arr); })
             .attr("height", barHeight - 1);
 
         bar.append("text")
-            .attr("x", function(d) { return x(d.percent_of_votes) - 3; })
+            .attr("x", function(d) { return x(d.arr) - 3; })
             .attr("y", barHeight / 2)
             .attr("dy", ".35em")
-            .text(function(d) { return d.percent_of_votes + "%"; });
+            .text(function(d) { return d.arr + "%"; });
     });
 
     // Need below for csv or tsv
     // function type(d) {
-    //     d.percent_of_votes = +d.percent_of_votes; // coerce to number
+    //     d.PCT = +d.PCT; // coerce to number
     //     return d;
     // }
     </script>
