@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <meta charset="utf-8">
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="//d3js.org/d3.v3.min.js"></script>
 <style>
 .chart rect {
@@ -27,32 +26,26 @@
     var chart = d3.select(".chart")
         .attr("width", width);
 
-    var arr = [];
-    $.getJSON("test_json_blob.json", function(data) {
-        arr.push(data[0].PCT);
-        // console.log(arr);
-    });
-
-    d3.json("d3-test-data.json", function(error, data) {
+    d3.json("modified-json.json", function(error, data) {
         console.log(data);
-        x.domain([0, d3.max(arr, function(d) { return d.arr; })]);
+        x.domain([0, d3.max(data, function(d) { return d.results[0].choice_vote_percent; })]);
 
-        chart.attr("height", barHeight * arr.length);
+        chart.attr("height", barHeight * data.length);
 
         var bar = chart.selectAll("g")
-            .data(arr)
+            .data(data)
             .enter().append("g")
             .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
 
         bar.append("rect")
-            .attr("width", function(d) { return x(d.arr); })
+            .attr("width", function(d) { return x(d.results[0].choice_vote_percent); })
             .attr("height", barHeight - 1);
 
         bar.append("text")
-            .attr("x", function(d) { return x(d.arr) - 3; })
+            .attr("x", function(d) { return x(d.results[0].choice_vote_percent) - 3; })
             .attr("y", barHeight / 2)
             .attr("dy", ".35em")
-            .text(function(d) { return d.arr + "%"; });
+            .text(function(d) { return d.results[0].choice_vote_percent + "%"; });
     });
 
     // Need below for csv or tsv
