@@ -65,6 +65,10 @@
 
     d3.csv("test.csv", type, function(data) {
 
+        var race = d3.nest()
+            .key(function(d) { return d.race_name; })
+            .entries(data);
+
         //sort bars based on value
         data = data.sort(function(a, b) {
             return d3.ascending(a.choice_vote_percent, b.choice_vote_percent);
@@ -82,6 +86,9 @@
             height = 250 - margin.top - margin.bottom;
 
         var svg = d3.select("#graphic").append("svg")
+            .data(race) //nest
+            .enter() //nest
+            .append("svg:svg") //nest
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .append("g")
@@ -111,7 +118,8 @@
             .call(yAxis)
 
         var bars = svg.selectAll(".bar")
-            .data(data)
+            //.data(data)
+            .data(function(d) {return d.values;}) //nest
             .enter()
             .append("g")
 
