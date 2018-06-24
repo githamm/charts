@@ -1,0 +1,66 @@
+[
+{
+    "CATKEY": "C_0",
+    "CAT": "Results",
+    "C": "City of Aurora Council Member At-Large",
+    "K": "1",
+    "AggID": null,
+    "regvoters": 0,
+    "VF": 2,
+    "TP": 173,
+    "PR": 170,
+    "TV": 0,
+    "BC": 0,
+    "RC": 1,
+    "RO": 0,
+    "CH": "Brian E. Arnold",
+    "P": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+    ],
+    "PCT": [
+        10.5076000557802,
+        20.5
+    ],
+    "V": 7535,
+    "W": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+    ],
+    "CRC": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+    ],
+    "CRO": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+    ],
+    "IsCumulative": null,
+    "CumulativeVotes": null,
+    "CumulativeChoices": null,
+    "CumulativePercentages": null
+}]
