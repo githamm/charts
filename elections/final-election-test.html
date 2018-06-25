@@ -119,11 +119,11 @@
 
         var raceName = svg.append("g")
             .append("text")
-            .text(function(d) {return d.key});
+            .text(function(d) { return d.key });
 
         var bars = svg.selectAll(".bar")
             //.data(data)
-            .data(function(d) {return d.values;}) //nest
+            .data(function(d) { return d.values; }) //nest
             .enter()
             .append("g")
 
