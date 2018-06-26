@@ -10,54 +10,29 @@
 </head>
 
 <body>
-    <script id="some-template" type="text/x-handlebars-template">
-        <table>
-            <tbody>
-                {{#race_name}}
-                <tr>
-                    <td>{{choice_name}}</td>
-                    <td>{{choice_vote_percent}}</td>
-                    <td>{{choice_votes}}</td>
-                </tr>
-                {{/race_name}}
-            </tbody>
-        </table>
+    <div id="DocumentResults"></div>
+    <script id="document-template" type="text/x-handlebars-template">
+        <div>
+            {{#each this}}
+            <div>
+                <div>
+                    <h2>{{race_name}}</h2> {{#results}}
+                    <p>{{choice_name}}</p>
+                    <p>{{choice_vote_percent}}</p>
+                    {{/results}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
     </script>
     <script>
     $.getJSON("results.json", function(data) {
-        //console.log(data);
-        var source = $("#some-template").html();
-        var template = Handlebars.compile(source);
-        // var data = {
-        //     users: [{
-        //         person: {
-        //             firstName: "Garry",
-        //             lastName: "Finch"
-        //         },
-        //         jobTitle: "Front End Technical Lead",
-        //         twitter: "gazraa"
-        //     }, {
-        //         person: {
-        //             firstName: "Garry",
-        //             lastName: "Finch"
-        //         },
-        //         jobTitle: "Photographer",
-        //         twitter: "photobasics"
-        //     }, {
-        //         person: {
-        //             firstName: "Garry",
-        //             lastName: "Finch"
-        //         },
-        //         jobTitle: "LEGO Geek",
-        //         twitter: "minifigures"
-        //     }]
-        // };
-
-        // Handlebars.registerHelper('fullName', function(person) {
-        //     return person.firstName + " " + person.lastName;
-        // });
-
-        $('body').append(template(data));
+        $(function() {
+            var source = $("#document-template").html();
+            var template = Handlebars.compile(source);
+            var html = template(data);
+            $('#DocumentResults').html(html);
+        })
     });
     </script>
 </body>
