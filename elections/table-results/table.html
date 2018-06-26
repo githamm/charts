@@ -73,29 +73,23 @@
 <body>
     <div id="results-container"></div>
     <script id="results-template" type="text/x-handlebars-template">
-        <div>
-            {{#each this}}
-            <div>
-                <div>
-                    <h3 class="race-title">{{race_name}}</h3> {{#results}}
-                    <table class="fixed-width">
-                        <tbody>
-                            <tr>
-                                <td>{{choice_vote_percent}}%</td>
-                                <td>{{choice_name}}</td>
-                                <td>{{choice_votes}}</td>
-                                <td>
-                                    <div class="bar-background">
-                                        <div class="bar-percentage" style="width:{{choice_vote_percent}}%"></div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    {{/results}}
-                </div>
-            </div>
-            {{/each}}
+        {{#each this}}
+        <h3 class="race-title">{{race_name}}</h3> {{#results}}
+        <table class="fixed-width">
+            <tbody>
+                <tr>
+                    <td>{{choice_vote_percent}}%</td>
+                    <td>{{choice_name}}</td>
+                    <td>{{choice_votes}}</td>
+                    <td>
+                        <div class="bar-background">
+                            <div class="bar-percentage" style="width:{{choice_vote_percent}}%"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        {{/results}} {{/each}}
         </div>
     </script>
     <script>
