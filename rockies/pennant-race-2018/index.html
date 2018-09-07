@@ -1,87 +1,153 @@
-
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width">
-    <title>2018 NL West Pennant Race</title>
+    <title>2018 NL West Division Race</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.18/c3.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.18/c3.js"></script>
-    <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.18/c3.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <style>
-        .c3-line {
-            stroke-width: 2.5px;
-        }
+    body {
+        background-color: #fafafa;
+    }
+
+    .c3-line {
+        stroke-width: 2.5px;
+    }
     </style>
 </head>
 
 <body>
     <div style="height: 550px;" id="pennant-race-chart"></div>
     <script>
-    var chart = c3.generate({
-        bindto: '#pennant-race-chart',
-        // padding: {
-        //     right: 20
-        // },
-        data: {
-            x: 'x',
-            columns: [
-                ['x', '120', '121', '122', '123', '124', '125', '126', '127', '128', '129', '130', '131', '132', '133', '134', '135', '136', '137', '138', '139', '140', '141', '142', '143', '144', '145', '146', '147', '148', '149', '150', '151', '152', '153', '154', '155', '156', '157', '158', '159', '160', '161', '162'],
-                ['Rockies', 64, 65, 66, 67, 68, 68, 69, 70, 70, 71, 71, 71, 72, 72, 72, 73, 74, 75, 76, 77],
-                ['Dodgers', 64, 64, 65, 66, 66, 67, 67, 67, 67, 68, 69, 70, 71, 72, 72, 73, 74, 75, 75, 76, 76],
-                ['Diamondbacks', 65, 66, 67, 68, 68, 69, 70, 71, 71, 71, 72, 72, 72, 73, 74, 74, 74, 74, 74, 75, 75]
-            ],
-            type: 'line',
+    var spreadsheetUrl = 'https://spreadsheets.google.com/feeds/cells/1e_bx54hnSmhxeFOesUDMwxgrnvnOyvFTGgZ9BWP2ya8/1/public/values?alt=json-in-script&callback=doData';
 
-            colors: {
-                'Rockies': 'rgba(51, 0, 111, .7)', //'#33006f',
-                'Diamondbacks': 'rgba(167, 25, 48, .7)', //'#a71930',
-                'Dodgers': 'rgba(0, 90, 156, .7)' //'#005a9c',
-                }
-        },
-        axis: {
-            x: {
-                type: 'category'
-            },
-            y: {
-                label: {
-                    text: 'Wins',
-                    position: 'outer-middle'
-                }
-            },
-            x: {
-                label: {
-                    text: 'Games played',
-                    position: 'outer-center'
-                }
+
+    // The callback function the JSONP request will execute to load data from API
+    function doData(data) {
+        // Final results will be stored here	
+        var results = [];
+
+        // Get all entries from spreadsheet
+        var entries = data.feed.entry;
+
+        // Set initial previous row, so we can check if the data in the current cell is from a new row
+        var previousRow = 0;
+
+        // Iterate all entries in the spreadsheet
+        for (var i = 0; i < entries.length; i++) {
+            // check what was the latest row we added to our result array, then load it to local variable
+            var latestRow = results[results.length - 1];
+
+            // get current cell
+            var cell = entries[i];
+
+            // get text from current cell
+            var text = cell.content.$t;
+
+            // get the current row
+            var row = cell.gs$cell.row;
+
+            // Determine if the current cell is in the latestRow or is a new row
+            if (row > previousRow) {
+                // this is a new row, create new array for this row
+                var newRow = [];
+
+                // add the cell text to this new row array  
+                newRow.push(text);
+
+                // store the new row array in the final results array
+                results.push(newRow);
+
+                // Increment the previous row, since we added a new row to the final results array
+                previousRow++;
+            } else {
+                // This cell is in an existing row we already added to the results array, add text to this existing row
+                latestRow.push(text);
             }
-        },
-        tooltip: {
-        	format: {
-        		title: function (d) { return 'Game # ' + d; },
-        		value: function (d) { return d + ' wins'; }
-        	}
-        },
-        legend: {
-            position: 'inset'
-        },
-        point: {
-            r: 3.75
-        },
-        grid: {
-            x: {
-                // lines: [
-                //     { value: 135, text: 'September', position: 'start' }
-                // ]
-            },
-            y: {
-                show: true
-            }
-        },
-        subchart: {
-        	show: false
+
         }
+
+        handleResults(results);
+    }
+
+    // Do what ever you please with the final array
+    function handleResults(spreadsheetArray) {
+        // console.log(spreadsheetArray);
+        var chart = c3.generate({
+            bindto: '#pennant-race-chart',
+            // padding: {
+            //     right: 20
+            // },
+            data: {
+                x: 'x',
+                columns: [
+                    ['x', '120', '121', '122', '123', '124', '125', '126', '127', '128', '129', '130', '131', '132', '133', '134', '135', '136', '137', '138', '139', '140', '141', '142', '143', '144', '145', '146', '147', '148', '149', '150', '151', '152', '153', '154', '155', '156', '157', '158', '159', '160', '161', '162'],
+                    spreadsheetArray[1], // Rockies
+                    spreadsheetArray[2], // Dodgers
+                    spreadsheetArray[3] // Diamondbacks
+                ],
+                type: 'line',
+
+                colors: {
+                    'Rockies': 'rgba(51, 0, 111, .7)', //'#33006f',
+                    'Diamondbacks': 'rgba(167, 25, 48, .7)', //'#a71930',
+                    'Dodgers': 'rgba(0, 90, 156, .7)' //'#005a9c',
+                }
+            },
+            axis: {
+                x: {
+                    type: 'category'
+                },
+                y: {
+                    label: {
+                        text: 'Wins',
+                        position: 'outer-middle'
+                    }
+                },
+                x: {
+                    label: {
+                        text: 'Game number',
+                        position: 'outer-center'
+                    }
+                }
+            },
+            tooltip: {
+                format: {
+                    title: function(d) { return 'Game # ' + d; },
+                    value: function(d) { return d + ' wins'; }
+                }
+            },
+            legend: {
+                position: 'inset'
+            },
+            point: {
+                r: 3.75
+            },
+            grid: {
+                x: {
+                    // lines: [
+                    //     { value: 135, text: 'September', position: 'start' }
+                    // ]
+                },
+                y: {
+                    show: true
+                }
+            },
+            subchart: {
+                show: false
+            }
+        });
+    }
+
+    // Create JSONP Request to Google Docs API, then execute the callback function doData
+    $.ajax({
+        url: spreadsheetUrl,
+        jsonp: 'doData',
+        dataType: 'jsonp'
     });
     </script>
 </body>
