@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>2018 NL West Pennant Race</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.18/c3.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.18/c3.js"></script>
+    <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+    <style>
+        .c3-line {
+            stroke-width: 2.5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="height: 550px;" id="pennant-race-chart"></div>
+    <script>
+    var chart = c3.generate({
+        bindto: '#pennant-race-chart',
+        // padding: {
+        //     right: 20
+        // },
+        data: {
+            x: 'x',
+            columns: [
+                ['x', '120', '121', '122', '123', '124', '125', '126', '127', '128', '129', '130', '131', '132', '133', '134', '135', '136', '137', '138', '139', '140', '141', '142', '143', '144', '145', '146', '147', '148', '149', '150', '151', '152', '153', '154', '155', '156', '157', '158', '159', '160', '161', '162'],
+                ['Rockies', 64, 65, 66, 67, 68, 68, 69, 70, 70, 71, 71, 71, 72, 72, 72, 73, 74, 75],
+                ['Dodgers', 64, 64, 65, 66, 66, 67, 67, 67, 67, 68, 69, 70, 71, 72, 72, 73, 74, 75, 75],
+                ['Diamondbacks', 65, 66, 67, 68, 68, 69, 70, 71, 71, 71, 72, 72, 72, 73, 74, 74, 74, 74, 74]
+            ],
+            type: 'line',
+
+            colors: {
+                'Rockies': '#33006f', //'#800080',
+                'Diamondbacks': '#a71930',
+                'Dodgers': '#005a9c',
+                }
+        },
+        axis: {
+            x: {
+                type: 'category'
+            },
+            y: {
+                label: {
+                    text: 'Wins',
+                    position: 'outer-middle'
+                }
+            },
+            x: {
+                label: {
+                    text: 'Games played',
+                    position: 'outer-center'
+                }
+            }
+        },
+        legend: {
+            position: 'inset'
+        },
+        point: {
+            r: 3.75
+        },
+        grid: {
+            x: {
+                // lines: [
+                //     { value: 135, text: 'September', position: 'start' }
+                // ]
+            },
+            y: {
+                show: true
+            }
+        },
+        subchart: {
+        	show: false
+        }
+    });
+    </script>
+</body>
+
+</html>
