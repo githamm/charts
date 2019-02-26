@@ -20,6 +20,8 @@
     <!-- <script src="aging-data.js"></script> -->
     <script src="colorado-counties.js"></script>
     <script>
+    // From http://bl.ocks.org/Andrew-Reid/11602fac1ea66c2a6d7f78067b2deddb
+
     // var features = { "type":"featureCollection", features: [
     //   {
     //     "type":"Feature",
@@ -48,26 +50,26 @@
     }).addTo(mymap);
 
     L.geoJSON(features, {
-        style: function(feature) {
-            // var pctChange = parseFloat(((feature.properties.tract_pop2017 - feature.properties.tract_pop2011) / feature.properties.tract_pop2011) * 100);
-            var fillColor,
-                density = feature.properties.popChange;
+            style: function(feature) {
+                // var pctChange = parseFloat(((feature.properties.tract_pop2017 - feature.properties.tract_pop2011) / feature.properties.tract_pop2011) * 100);
+                var fillColor,
+                    density = feature.properties.popChange;
                 console.log(density);
-            if (density > 100) fillColor = "#4d9221";
-            else if (density == 50) fillColor = "red";
-            else if (density > 25) fillColor = "#b8e186";
-            else if (density > 0) fillColor = "#e6f5d0";
-            else if (density > -10) fillColor = "#fde0ef";
-            else if (density < -10) fillColor = "#de77ae";
-            else fillColor = "rgba(0,0,0,0"; // no data
-            return {
-                color: "#000",
-                weight: .3,
-                fillColor: fillColor,
-                fillOpacity: .7
-            };
-        }
-    })
+                if (density > 100) fillColor = "#4d9221";
+                else if (density == 50) fillColor = "red";
+                else if (density > 25) fillColor = "#b8e186";
+                else if (density > 0) fillColor = "#e6f5d0";
+                else if (density > -10) fillColor = "#fde0ef";
+                else if (density < -10) fillColor = "#de77ae";
+                else fillColor = "rgba(0,0,0,0"; // no data
+                return {
+                    color: "#000",
+                    weight: .3,
+                    fillColor: fillColor,
+                    fillOpacity: .7
+                };
+            }
+        })
         .addTo(mymap)
         .bindPopup(chart);
 
@@ -128,7 +130,7 @@
 
         var title = svg.append("text")
             .style("font-size", "20px")
-            .text(feature.properties.title)
+            .text(feature.properties.COUNTY)
             .attr("x", width / 2 + margin.left)
             .attr("y", 30)
             .attr("text-anchor", "middle");
