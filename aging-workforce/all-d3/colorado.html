@@ -196,7 +196,8 @@
         var drawChart = function(field) {
             // remove the previous chart
             d3.select('#chart').select('.x.axis').remove();
-            d3.select('#chart').select('path').remove();
+            d3.select('#chart').select('path.line').remove();
+            d3.select('#chart').select('path.line-second').remove();
 
             // update the title
             d3.select('#heading')
