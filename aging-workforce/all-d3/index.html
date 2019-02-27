@@ -61,6 +61,7 @@
   <script>
     function draw(error, data) {
     "use strict";
+    console.log(data);
       
     // important: First argument it expects is error
     if (error) throw error;
@@ -113,6 +114,7 @@
 
       // find the min/max of listing per neighborhood
       var listings_extent = d3.extent(d3.values(data[1]));
+      console.log(listings_extent);
 
       // append a bubble to each neighborhood
       var bubbles = d3.select('#map').append("g")
@@ -194,6 +196,7 @@
           var neigh_data = data[2].filter(function(d) {
             return d[field];
           });
+          console.log(neigh_data);
 
           // get min/max dates
           var time_extent = d3.extent(neigh_data, function(d){
