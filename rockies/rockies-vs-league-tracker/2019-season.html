@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rockies vs MLB</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="http://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
+    <script src='tabletop.min.js'></script>
+    <script src='sheetsee.js'></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #fafafa;
+    }
+
+    table {
+        /*width: 100%;*/
+        border-collapse: collapse;
+        font-size: .95rem;
+    }
+
+    tr.border-bottom td {
+        border-bottom: 1pt solid #ddd;
+    }
+
+    th {
+        text-align: left;
+    }
+
+    th.division-header,
+    th.games-header,
+    th.record-header {
+        color: rgba(0,0,0,.4);
+        text-transform: uppercase;
+        font-size: .6rem;
+    }
+
+    th.division-header,
+    th.games-header,
+    th.record-header {
+        padding: 0px 0px 0px 3px;
+    }
+
+    th.division-header {
+        width: 20px;
+    }
+
+    th.results-header {
+        width: 48px;
+    }
+
+    th.record-header {
+        width: 20px;
+    }
+
+    th.division-stats {
+        padding: 3px 0px 0px 4px;
+        text-transform: uppercase;
+        color:#c64646;
+        font-size: .8rem;
+    }
+
+    td {
+        padding: 4px;
+    }
+
+    td.team-name {
+        width: 100px;
+    }
+
+    .homewin {
+        background-color: rgba(0,0,0,.9);
+        height: 14px;
+        width: 14px;
+        border-radius: 50%;
+        margin: -4px;
+        border: 1px solid #fff;
+    }
+
+    .homeloss {
+        background-color: #ccc;
+        height: 14px;
+        width: 14px;
+        border-radius: 50%;
+        margin: -4px;
+        border: 1px solid #fff;
+    }
+
+    .roadwin {
+        /*background-color: #b65dff;*/
+        height: 6px;
+        width: 6px;
+        border-radius: 50%;
+        margin: -3px;
+        border: 4px solid rgba(0,0,0,.9);
+    }
+
+    .roadloss {
+        /*background-color: #ccc;*/
+        height: 6px;
+        width: 6px;
+        border-radius: 50%;
+        margin: -4px -3px -4px -3px;
+        border: 4px solid #ccc;
+    }
+
+    td.division {
+        font-weight: bold;
+        border: none;
+    }
+
+    .legend-subtitle {
+        font-size: .9rem;
+        text-transform: uppercase;
+        font-weight: normal;
+        color: #c64646;
+    }
+
+    .legend-win-loss {
+        font-size: .8rem;
+        text-transform: uppercase;
+        color: rgba(0,0,0,.8);
+    }
+
+    #legend-home-win, #legend-home-loss {
+        background-color: rgba(0,0,0,.9);
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        display: inline-block;
+        margin: 0 3px 0 5px;
+    }
+
+    #legend-road-win, #legend-road-loss {
+        height: 5.5px;
+        width: 5.5px;
+        border-radius: 50%;
+        border: 3.5px solid rgba(0,0,0,.9);
+        display: inline-block;
+        margin: 0 3px 1px 5px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div style="border:1px solid black;width:300px;padding:10px;">
+            <div><span class="legend-subtitle" style="margin-right:7px">Win</span>
+                <div id="legend-home-win"></div><span class="legend-win-loss">Home</span>
+                <div id="legend-road-win"></div><span class="legend-win-loss">Road</span>
+            </div>
+            <div><span class="legend-subtitle">Loss</span>
+                <div id="legend-home-loss"></div><span class="legend-win-loss">Home</span>
+                <div id="legend-road-loss"></div><span class="legend-win-loss">Road</span>
+            </div>
+        </div>
+    <h2>Rockies vs ...</h2>
+    <div id="rockies-table">Loading...</div>
+    </div>
+    <script id="rockies-table_template" type="text/html">
+        <table cellpadding="0">
+            <tbody>
+                {{#rows}}
+                <tr class="border-bottom">
+                    <th class="record-header"></th>
+                    <th class="record-header">{{gamesheader}}</th>
+                    <th class="record-header">{{winheader}}</th>
+                    <th class="record-header">{{lossheader}}</th>
+                </tr>
+                <tr>
+                    <th class="division-stats"><span class="division-border">{{division}}</span></th>
+                    <th class="division-stats">{{divisiongames}}</th>
+                    <th class="division-stats">{{divisionwins}}</th>
+                    <th class="division-stats">{{divisionlosses}}</th>
+                </tr>
+                <tr class="border-bottom">
+                    <td class="team-name">{{team}}</td>
+                    <td>{{numbergames}}</td>
+                    <td>{{gamewins}}</td>
+                    <td>{{gamelosses}}</td>
+                    <td>
+                        <a href="{{storylink1}}" target="_blank">
+                            <div class="{{result1}}" title="{{date1}} &bull; {{score1}}"></div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{storylink2}}" target="_blank">
+                            <div class="{{result2}}" title="{{date2}} &bull; {{score2}}"></div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{storylink3}}" target="_blank">
+                            <div class="{{result3}}" title="{{date3}} &bull; {{score3}}"></div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{storylink4}}" target="_blank">
+                            <div class="{{result4}}" title="{{date4}} &bull; {{score4}}"></div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{storylink5}}" target="_blank">
+                            <div class="{{result5}}" title="{{date5}} &bull; {{score5}}"></div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{storylink6}}" target="_blank">
+                            <div class="{{result6}}" title="{{date6}} &bull; {{score6}}"></div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{storylink7}}" target="_blank">
+                            <div class="{{result7}}" title="{{date7}} &bull; {{score7}}"></div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{storylink8}}" target="_blank">
+                            <div class="{{result8}}" title="{{date8}} &bull; {{score8}}"></div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{storylink9}}" target="_blank">
+                            <div class="{{result9}}" title="{{date9}} &bull; {{score9}}"></div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{storylink10}}" target="_blank">
+                            <div class="{{result10}}" title="{{date10}} &bull; {{score10}}"></div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{storylink11}}" target="_blank">
+                            <div class="{{result11}}" title="{{date11}} &bull; {{score11}}"></div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{storylink12}}" target="_blank">
+                            <div class="{{result12}}" title="{{date12}} &bull; {{score12}}"></div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{storylink13}}" target="_blank">
+                            <div class="{{result13}}" title="{{date13}} &bull; {{score13}}"></div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{storylink14}}" target="_blank">
+                            <div class="{{result14}}" title="{{date14}} &bull; {{score14}}"></div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{storylink15}}" target="_blank">
+                            <div class="{{result15}}" title="{{date15}} &bull; {{score15}}"></div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{storylink16}}" target="_blank">
+                            <div class="{{result16}}" title="{{date16}} &bull; {{score16}}"></div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{storylink17}}" target="_blank">
+                            <div class="{{result17}}" title="{{date17}} &bull; {{score17}}"></div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{storylink18}}" target="_blank">
+                            <div class="{{result18}}" title="{{date18}} &bull; {{score18}}"></div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{storylink19}}" target="_blank">
+                            <div class="{{result19}}" title="{{date19}} &bull; {{score19}}"></div>
+                        </a>
+                    </td>
+                </tr>
+                {{/rows}}
+            </tbody>
+        </table>
+    </script>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        var URL = "1N5BKZL7lIWs-h35aQH7ErIEqmHizM9iWYwYSgQ-IPpI"
+        Tabletop.init({ key: URL, callback: showInfo, simpleSheet: true })
+    })
+
+    function showInfo(data) {
+        var tableOptions = {
+            "data": data,
+            // "pagination": 10,
+            "tableDiv": "#rockies-table",
+            // "filterDiv": "#fullTableFilter"
+        }
+        console.log(data);
+        Sheetsee.makeTable(tableOptions)
+        // Sheetsee.initiateTableFilter(tableOptions)
+    }
+    </script>
+</body>
+
+</html>
