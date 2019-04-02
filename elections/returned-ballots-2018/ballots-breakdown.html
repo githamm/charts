@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Colorado Returned Ballots 2018 Election | The Denver Post</title>
+    <link rel="stylesheet" href="//extras.denverpost.com/transgender/css/normalize.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.css" />
+    <link rel="stylesheet" href="//extras.denverpost.com/libraries/foundation/foundation-min.css" />
+    <script src="//extras.denverpost.com/libraries/datatables/jQuery-3.2.1/jquery-3.2.1.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+    <script src="//extras.denverpost.com/foundation/js/foundation.min.js"></script>
+    <script src="//extras.denverpost.com/app/homicide-report/js/d3.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.js"></script>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    path.c3-bar-0 {
+        fill: rgba(0, 116, 176, 1) !important; /* dem women */
+    }
+
+    path.c3-bar-1 {
+        fill: rgba(217, 65, 74, .8) !important; /* rep men */
+    }
+
+    path.c3-bar-2 {
+        fill: rgba(217, 65, 74, 1) !important; /* rep women */
+    }
+
+    path.c3-bar-3 {
+        fill: rgba(248, 161, 107, .8)  !important; /* unaffiliated men */
+    }
+
+    path.c3-bar-4 {
+        fill: rgba(0, 116, 176, .8) !important; /* dem men */
+    }
+
+    path.c3-bar-5 {
+        fill: rgba(248, 161, 107, 1)  !important; /* unaffiliaed women */
+    }
+    </style>
+</head>
+
+<body>
+    <div id="total-turnout"></div>
+    <script>
+    var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1IMqcx9Y6LcL-Yf0CDDaI74W3k-UCOi7eZt0QWurPYwE/';
+
+    function init() {
+        Tabletop.init({
+            key: publicSpreadsheetUrl,
+            callback: showInfo,
+            simpleSheet: true,
+            parseNumbers: true,
+            orderby: 'Ballotsreturned',
+            reverse: true
+        })
+    }
+
+    function showInfo(data, tabletop) {
+        console.log(data);
+
+        var ballotChart = c3.generate({
+            bindto: '#total-turnout',
+            size: {
+                height: 400
+            },
+            data: {
+                json: data,
+                keys: {
+                    x: 'Category',
+                    value: ['Ballots returned']
+                },
+                type: 'bar',
+                colors: {
+                    'Ballots returned': '#737373'
+                },
+            },
+            legend: {
+            	hide: true
+            },
+            tooltip: {
+                format: {
+                    value: function(value) {
+                        return d3.format(',')(value)
+                    }
+                }
+            },
+            axis: {
+                x: {
+                    type: 'category',
+                },
+                y: {
+                    tick: {
+                        values: [50000, 100000],
+                        format: d3.format(',')
+                    },
+                },
+                rotated: true
+            },
+            grid: {
+                y: {
+                    show: true
+                }
+            }
+        });
+    };
+
+    window.addEventListener('DOMContentLoaded', init)
+    </script>
+</body>
+
+</html>

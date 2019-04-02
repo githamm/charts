@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Colorado Rockies Charts | The Denver Post</title>
+    <link rel="stylesheet" href="//extras.denverpost.com/transgender/css/normalize.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.css" />
+    <link rel="stylesheet" href="//extras.denverpost.com/libraries/foundation/foundation-min.css" />
+    <script src="//extras.denverpost.com/libraries/datatables/jQuery-3.2.1/jquery-3.2.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
+    <script src="//extras.denverpost.com/foundation/js/foundation.min.js"></script>
+    <script src="//extras.denverpost.com/app/homicide-report/js/d3.v3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.js"></script>
+    <style>
+    .c3-line {
+        stroke-width: 1.5px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="permits"></div>
+    <script>
+    var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/10hmI5CVctJdNCgdS0DAJtqVRWGnS8weuDY9a3mHExxg/';
+
+    function init() {
+        Tabletop.init({
+            key: publicSpreadsheetUrl,
+            callback: showInfo,
+            simpleSheet: true,
+            parseNumbers: true,
+        })
+    }
+
+    function showInfo(data, tabletop) {
+        console.log(data);
+        var strikeoutChart = c3.generate({
+            bindto: '#permits',
+            size: {
+                height: 400
+            },
+            data: {
+                json: data,
+                keys: {
+                    x: 'date',
+                    value: ['pending', 'approved']
+                },
+                names: {
+                    pending: 'Pending permits',
+                    approved: 'Approved permits'
+                },
+                type: 'line',
+                colors: {
+                    'pending': 'red',
+                    'approved': 'black',
+                },
+            },
+            axis: {
+                x: {
+                    type: 'category'
+                },
+                y: {
+                    tick: {
+                        format: d3.format(',')
+                    },
+                    label: {
+                        text: 'Number of permits',
+                        position: 'outer-middle'
+                    }
+                }
+            },
+            grid: {
+                x: {
+                    show: true
+                },
+                y: {
+                    show: true
+                }
+            },
+            point: {
+                r: 3
+            }
+        });
+    };
+
+    window.addEventListener('DOMContentLoaded', init)
+    </script>
+</body>
+
+</html>
