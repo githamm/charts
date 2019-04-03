@@ -6,6 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="http://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
     <script src='tabletop.min.js'></script>
     <script src='sheetsee.js'></script>
     <style>
@@ -14,6 +15,7 @@
     body {
         font-family: 'Roboto', sans-serif;
         background-color: #fafafa;
+        color: #111111;
     }
 
     table {
@@ -72,7 +74,7 @@
     }
 
     .homewin {
-        background-color: rgba(0,0,0,.9);
+        background-color: #7946b5;
         height: 14px;
         width: 14px;
         border-radius: 50%;
@@ -81,7 +83,7 @@
     }
 
     .homeloss {
-        background-color: #ccc;
+        background-color: #b0bac0;
         height: 14px;
         width: 14px;
         border-radius: 50%;
@@ -95,7 +97,7 @@
         width: 6px;
         border-radius: 50%;
         margin: -3px;
-        border: 4px solid rgba(0,0,0,.9);
+        border: 4px solid #7946b5;
     }
 
     .roadloss {
@@ -104,7 +106,7 @@
         width: 6px;
         border-radius: 50%;
         margin: -4px -3px -4px -3px;
-        border: 4px solid #ccc;
+        border: 4px solid #b0bac0;
     }
 
     td.division {
@@ -115,8 +117,8 @@
     .legend-subtitle {
         font-size: .9rem;
         text-transform: uppercase;
-        font-weight: normal;
-        color: #c64646;
+        font-weight: bold;
+        letter-spacing: 1px;
     }
 
     .legend-win-loss {
@@ -126,22 +128,36 @@
     }
 
     #legend-home-win, #legend-home-loss {
-        background-color: rgba(0,0,0,.9);
         height: 12px;
         width: 12px;
         border-radius: 50%;
         border: 1px solid #fff;
         display: inline-block;
-        margin: 0 3px 0 5px;
+        margin: 0 3px -2px 5px;
     }
 
     #legend-road-win, #legend-road-loss {
-        height: 5.5px;
-        width: 5.5px;
+        height: 5px;
+        width: 5px;
         border-radius: 50%;
-        border: 3.5px solid rgba(0,0,0,.9);
         display: inline-block;
-        margin: 0 3px 1px 5px;
+        margin: 0 3px -2px 5px;
+    }
+
+    #legend-home-win {
+        background-color: #7946b5;
+    }
+
+    #legend-home-loss {
+        background-color: #b0bac0;
+    }
+
+    #legend-road-win {
+        border: 4px solid #7946b5;
+    }
+
+    #legend-road-loss {
+        border: 4px solid #b0bac0;
     }
     </style>
 </head>
@@ -149,7 +165,7 @@
 <body>
     <div class="container">
         <div style="border:1px solid black;width:300px;padding:10px;">
-            <div><span class="legend-subtitle" style="margin-right:7px">Win</span>
+            <div><span class="legend-subtitle" style="margin-right:8.5px">Win</span>
                 <div id="legend-home-win"></div><span class="legend-win-loss">Home</span>
                 <div id="legend-road-win"></div><span class="legend-win-loss">Road</span>
             </div>
@@ -158,8 +174,10 @@
                 <div id="legend-road-loss"></div><span class="legend-win-loss">Road</span>
             </div>
         </div>
-    <h2>Rockies vs ...</h2>
-    <div id="rockies-table">Loading...</div>
+        <h2>Rockies vs ...</h2>
+        <div>Road wins: <span id="road-wins"></span></div>
+        <div id="rockies-table">Loading...</div>
+        <div id="container5"></div>
     </div>
     <script id="rockies-table_template" type="text/html">
         <table cellpadding="0">
@@ -295,7 +313,15 @@
             "tableDiv": "#rockies-table",
             // "filterDiv": "#fullTableFilter"
         }
-        console.log(data);
+        // console.log(data[0].roadwins);
+        var homeWins = data[0].homewins,
+            homeLosses = data[0].homelosses,
+            roadWins = data[0].roadwins,
+            roadLosses = data[0].roadlosses;
+        console.log(roadWins);
+
+        document.getElementById('#road-wins').innerHTML = roadWins;
+
         Sheetsee.makeTable(tableOptions)
         // Sheetsee.initiateTableFilter(tableOptions)
     }
