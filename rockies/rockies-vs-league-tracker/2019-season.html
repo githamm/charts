@@ -7,21 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="http://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
-    <script src='tabletop.min.js'></script>
-    <script src='sheetsee.js'></script>
+    <script src="tabletop.js"></script>
+    <script src="sheetsee.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Roboto');
 
     body {
         font-family: 'Roboto', sans-serif;
         background-color: #fafafa;
-        color: #111111;
+        color: #464646;
     }
 
     table {
         /*width: 100%;*/
         border-collapse: collapse;
         font-size: .95rem;
+        margin-top: 20px;
     }
 
     tr.border-bottom td {
@@ -75,38 +76,36 @@
 
     .homewin {
         background-color: #7946b5;
-        height: 14px;
-        width: 14px;
+        height: 13.5px;
+        width: 13.5px;
         border-radius: 50%;
-        margin: -4px;
-        border: 1px solid #fff;
+        margin: -3px;
     }
 
     .homeloss {
         background-color: #b0bac0;
-        height: 14px;
-        width: 14px;
+        height: 13.5px;
+        width: 13.5px;
         border-radius: 50%;
-        margin: -4px;
-        border: 1px solid #fff;
+        margin: -3px;
     }
 
     .roadwin {
         /*background-color: #b65dff;*/
-        height: 6px;
-        width: 6px;
+        height: 5px;
+        width: 5px;
         border-radius: 50%;
         margin: -3px;
-        border: 4px solid #7946b5;
+        border: 4.5px solid #7946b5;
     }
 
     .roadloss {
         /*background-color: #ccc;*/
-        height: 6px;
-        width: 6px;
+        height: 5px;
+        width: 5px;
         border-radius: 50%;
-        margin: -4px -3px -4px -3px;
-        border: 4px solid #b0bac0;
+        margin: -3px;
+        border: 4.5px solid #b0bac0;
     }
 
     td.division {
@@ -114,15 +113,22 @@
         border: none;
     }
 
+    .x {
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background-color: silver;
+    }
+
     .legend-subtitle {
-        font-size: .9rem;
+        font-size: .75rem;
         text-transform: uppercase;
         font-weight: bold;
         letter-spacing: 1px;
     }
 
     .legend-win-loss {
-        font-size: .8rem;
+        font-size: .7rem;
         text-transform: uppercase;
         color: rgba(0,0,0,.8);
     }
@@ -131,17 +137,19 @@
         height: 12px;
         width: 12px;
         border-radius: 50%;
-        border: 1px solid #fff;
+        /*border: 1px solid #fff;*/
         display: inline-block;
-        margin: 0 3px -2px 5px;
+        vertical-align: middle;
+        /*margin: 0 3px -2px 5px;*/
     }
 
     #legend-road-win, #legend-road-loss {
-        height: 5px;
-        width: 5px;
+        height: 4px;
+        width: 4px;
         border-radius: 50%;
         display: inline-block;
-        margin: 0 3px -2px 5px;
+        vertical-align: middle;
+        /*margin: 0 3px -2px 5px;*/
     }
 
     #legend-home-win {
@@ -159,28 +167,103 @@
     #legend-road-loss {
         border: 4px solid #b0bac0;
     }
+
+    #record-container {
+        text-align: center;
+        border-bottom: 1px solid silver;
+        color: #464646;
+        margin: 0 auto;
+    }
+
+    .record-header {
+        text-transform: uppercase;
+        letter-spacing: -1px;
+        margin: 10px 0 -18px 0;
+    }
+
+    .overall-record {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .home-away-record {
+        margin-top: -30px;
+        color: #828282;
+    }
+
+    #legend-container {
+         
+    }
+
+    #intro-container {
+        /*width: 300px;*/
+        margin-top: -10px;
+    }
+
+    .intro-text {
+        display: inline;
+        vertical-align: middle;
+    }
+
+    #small-legend-container {
+        width: 99%;
+        margin: 0 auto;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        padding: 6px 0 7px 0;
+    }
+
+    .table-intro {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+
+    #main-container {
+        /*width: 300px;*/
+        border: 1px solid silver;
+        padding: 5px;
+    }
+
+    #rockies-table {
+        width: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+
+    .record-header-text {
+        background-color: #464646;
+        color: #fafafa;
+        padding: 10px;
+    }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div style="border:1px solid black;width:300px;padding:10px;">
-            <div><span class="legend-subtitle" style="margin-right:8.5px">Win</span>
-                <div id="legend-home-win"></div><span class="legend-win-loss">Home</span>
-                <div id="legend-road-win"></div><span class="legend-win-loss">Road</span>
-            </div>
-            <div><span class="legend-subtitle">Loss</span>
-                <div id="legend-home-loss"></div><span class="legend-win-loss">Home</span>
-                <div id="legend-road-loss"></div><span class="legend-win-loss">Road</span>
+    <div id="main-container">
+        <div id="record-container">
+            <h3 class="record-header"><span class="record-header-text">Rockies Record</h3>
+            <p class="overall-record"><span id="overall-wins"></span> - <span id="overall-losses"></span></p>
+            <p class="home-away-record"><em><span id="home-wins"></span>-<span id="home-losses"></span> <em>home</em> &bull; <span id="road-wins"></span>-<span id="road-losses"></span> away</em></p>
+        </div>
+        </span>
+        <div id="intro-container">
+            <h2 class="table-intro">Rockies vs ...</h2>
+            <p class="intro-text">The chart shows the Rockies' record against every team (and division) they play, including the number of games against that team and whether they won or lost at home or away. <em>Hover over a circle for the game date and score, click the circle to go to the story about the game.</em></p>
+            <!-- <p class="intro-text">The chart shows the Rockies' record against every team they play, including the numbers of games they play and whether it was a home win <div id="legend-home-win"></div> or loss <div id="legend-home-loss"></div>, or road win <div id="legend-road-win"></div> or loss <div id="legend-road-loss"></div> -->
+            <div style="margin-top:10px">
+                <div id="small-legend-container">
+                    <div id="legend-home-win"></div><span class="legend-win-loss" style="margin-right:3px"> Home w</span>
+                    <div id="legend-road-win"></div><span class="legend-win-loss" style="margin-right:3px"> Road w</span>
+                    <div id="legend-home-loss"></div><span class="legend-win-loss" style="margin-right:3px"> Home l</span>
+                    <div id="legend-road-loss"></div><span class="legend-win-loss"> Road l</span>
+                </div>
             </div>
         </div>
-        <h2>Rockies vs ...</h2>
-        <div>Road wins: <span id="road-wins"></span></div>
         <div id="rockies-table">Loading...</div>
-        <div id="container5"></div>
-    </div>
-    <script id="rockies-table_template" type="text/html">
-        <table cellpadding="0">
+        <script id="rockies-table_template" type="text/html">
+            <div id="table-container">
+                <table cellpadding="0">
             <tbody>
                 {{#rows}}
                 <tr class="border-bottom">
@@ -200,7 +283,7 @@
                     <td>{{numbergames}}</td>
                     <td>{{gamewins}}</td>
                     <td>{{gamelosses}}</td>
-                    <td>
+                    <td style="padding-left:8px">
                         <a href="{{storylink1}}" target="_blank">
                             <div class="{{result1}}" title="{{date1}} &bull; {{score1}}"></div>
                         </a>
@@ -299,33 +382,40 @@
                 {{/rows}}
             </tbody>
         </table>
+    </div>
     </script>
-    <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function() {
-        var URL = "1N5BKZL7lIWs-h35aQH7ErIEqmHizM9iWYwYSgQ-IPpI"
-        Tabletop.init({ key: URL, callback: showInfo, simpleSheet: true })
-    })
+        <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var URL = "1N5BKZL7lIWs-h35aQH7ErIEqmHizM9iWYwYSgQ-IPpI"
+            Tabletop.init({ key: URL, callback: showInfo, simpleSheet: true })
+        })
 
-    function showInfo(data) {
-        var tableOptions = {
-            "data": data,
-            // "pagination": 10,
-            "tableDiv": "#rockies-table",
-            // "filterDiv": "#fullTableFilter"
+        function showInfo(data) {
+            var tableOptions = {
+                "data": data,
+                // "pagination": 10,
+                "tableDiv": "#rockies-table",
+                // "filterDiv": "#fullTableFilter"
+            }
+            console.log(data);
+            var homeWins = data[0].homewins,
+                homeLosses = data[0].homelosses,
+                roadWins = data[0].roadwins,
+                roadLosses = data[0].roadlosses,
+                overallWins = data[20].divisionwins,
+                overallLosses = data[20].divisionlosses;
+
+            document.getElementById('home-wins').innerHTML = homeWins;
+            document.getElementById('home-losses').innerHTML = homeLosses;
+            document.getElementById('road-wins').innerHTML = roadWins;
+            document.getElementById('road-losses').innerHTML = roadLosses;
+            document.getElementById('overall-wins').innerHTML = overallWins;
+            document.getElementById('overall-losses').innerHTML = overallLosses;
+
+            Sheetsee.makeTable(tableOptions)
+            // Sheetsee.initiateTableFilter(tableOptions)
         }
-        // console.log(data[0].roadwins);
-        var homeWins = data[0].homewins,
-            homeLosses = data[0].homelosses,
-            roadWins = data[0].roadwins,
-            roadLosses = data[0].roadlosses;
-        console.log(roadWins);
-
-        document.getElementById('#road-wins').innerHTML = roadWins;
-
-        Sheetsee.makeTable(tableOptions)
-        // Sheetsee.initiateTableFilter(tableOptions)
-    }
-    </script>
+        </script>
 </body>
 
 </html>
